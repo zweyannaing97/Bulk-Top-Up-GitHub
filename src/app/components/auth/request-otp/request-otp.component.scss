@@ -1,0 +1,17 @@
+.bg-opacity{
+  opacity: 0.4;
+}
+.otp-wrapper {
+  position: absolute;
+  top: 23%;
+  right: 36%;
+}
+.login-wrapper {
+  padding: 130px 24px 25px;
+}
+@media screen and (max-width: 1551px) {
+  .otp-wrapper{
+    top: 13% !important;
+    right: 33% !important;
+  }
+}

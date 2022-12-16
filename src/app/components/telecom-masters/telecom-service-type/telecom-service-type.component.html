@@ -1,0 +1,166 @@
+<div class=" p-3">
+  <div class="d-flex justify-content-between align-items-center pb-2">
+    <h3 >Telecom Service Type List</h3>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="search-form">
+        <input type="text" name="search" placeholder="Search" class="search-bar" autocomplete="off">
+      </div>
+      <img src="assets/icons/Add%20pattern.svg" alt="" class="crud-btns pe-2" matTooltip="Create New"
+           aria-label="Button that displays a tooltip when focused or hovered over" (click)="openDialog()">
+      <img src="assets/icons/excel%20download%20.svg" alt="" class="crud-btns pe-2" matTooltip="Download"
+           aria-label="Button that displays a tooltip when focused or hovered over">
+    </div>
+  </div>
+  <div>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      [(ngModel)]="favoriteSeason">
+      <mat-radio-button class="example-radio-button pe-5" *ngFor="let season of seasons" [value]="season">
+        {{season}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="table-pagination telecom-table" >
+
+    <!--    //All Table-->
+    <table mat-table [dataSource]="dataSource" *ngIf="favoriteSeason==='All'">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="numberId">
+        <th mat-header-cell *matHeaderCellDef> Number </th>
+        <td mat-cell *matCellDef="let element" style="width: 5%;">
+          {{element.numberId}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="companyName">
+        <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+        <td mat-cell *matCellDef="let element" style="width: 40%;">
+          {{element.companyName}}
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+
+
+      <!-- Weight Column -->
+
+      <ng-container matColumnDef="isActive">
+        <th mat-header-cell *matHeaderCellDef> Is Active </th>
+        <td mat-cell *matCellDef="let element"> {{element.isActive}} </td>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">
+          <a (click)="openDialog1()">
+            <img class="actionImage" [src]="element.action" matTooltip="Edit"
+                 aria-label="Button that displays a tooltip when focused or hovered over"/>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!--    //Active Table-->
+    <table mat-table [dataSource]="dataSource1" *ngIf="favoriteSeason==='Active'">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="numberId">
+        <th mat-header-cell *matHeaderCellDef> Number </th>
+        <td mat-cell *matCellDef="let element" style="width: 5%;">
+          {{element.numberId}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="companyName">
+        <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+        <td mat-cell *matCellDef="let element" style="width: 40%;">
+          {{element.companyName}}
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+
+
+      <!-- Weight Column -->
+
+      <ng-container matColumnDef="isActive">
+        <th mat-header-cell *matHeaderCellDef> Is Active </th>
+        <td mat-cell *matCellDef="let element"> {{element.isActive}} </td>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">
+          <a (click)="openDialog1()">
+            <img class="actionImage" [src]="element.action" matTooltip="Edit"
+                 aria-label="Button that displays a tooltip when focused or hovered over"/>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!--    //Is Active Table-->
+    <table mat-table [dataSource]="dataSource2" *ngIf="favoriteSeason==='Is Active'">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="numberId">
+        <th mat-header-cell *matHeaderCellDef> Number </th>
+        <td mat-cell *matCellDef="let element" style="width: 5%;">
+          {{element.numberId}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="companyName">
+        <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+        <td mat-cell *matCellDef="let element" style="width: 40%;">
+          {{element.companyName}}
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+
+
+      <!-- Weight Column -->
+
+      <ng-container matColumnDef="isActive">
+        <th mat-header-cell *matHeaderCellDef> Is Active </th>
+        <td mat-cell *matCellDef="let element"> {{element.isActive}} </td>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">
+          <a (click)="openDialog1()">
+            <img class="actionImage" [src]="element.action" matTooltip="Edit"
+                 aria-label="Button that displays a tooltip when focused or hovered over"/>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+  <mat-toolbar>
+    <mat-paginator *ngIf="favoriteSeason" class="mat-paginator-companyName" [pageSizeOptions]="[20, 25, 50, 100]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </mat-toolbar>
+</div>

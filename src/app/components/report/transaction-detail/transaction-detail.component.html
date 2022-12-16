@@ -1,0 +1,382 @@
+<div class="p-2 main-content">
+      <h3>Transaction by date</h3>
+      <div class="row rowMargin">
+        <div class="col-12 col-md-12 col-lg-6 col-xl-4">
+          <h5 class="pt-2">Select Period Date</h5>
+          <mat-form-field appearance="fill" class="useraddInput" style="width: 90%;">
+            <input readonly matInput
+                   type="text"
+                   placeholder="From - To"
+                   bsDaterangepicker
+                   [bsConfig]="{ isAnimated: true,showWeekNumbers: false, rangeInputFormat : 'ddd,DD-MMM-YYYY', dateInputFormat: 'ddd,DD-MMM-YYYY',showPreviousMonth: true }"[maxDate]="maxDate">
+            <mat-icon class="float-end text-dark" style="position: absolute;bottom: 40%;right: 2%">date_range</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-6 col-xl-4">
+          <label class="fw-bold pb-2">Select Transaction Type</label>
+          <mat-select panelClass="single-option" class="select_user_role_permission_filter"  placeholder="Select" [(ngModel)]="selectedCar">
+            <mat-option *ngFor="let transactionType of transactionTypes" [value]="transactionType.value">{{transactionType.viewValue}}</mat-option>
+          </mat-select>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-6 col-xl-4">
+          <label class="fw-bold pb-2">Select Operator</label>
+          <mat-select panelClass="single-option" class="select_user_role_permission_filter"  placeholder="Select">
+            <mat-option *ngFor="let operator of operators" [value]="operator">{{operator.viewValue}}</mat-option>
+          </mat-select>
+        </div>
+
+      </div>
+      <div class="row rowMargin pb-2">
+        <div class="col-12 col-md-12 col-lg-6 col-xl-4">
+          <label class="fw-bold pb-2">Select Process</label>
+          <mat-select panelClass="single-option" class="select_user_role_permission_filter"  placeholder="Select">
+            <mat-option *ngFor="let process of processes" [value]="process">{{process.viewValue}}</mat-option>
+          </mat-select>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-6 col-xl-4">
+          <label class="fw-bold pb-2">Select Status</label>
+          <mat-select panelClass="single-option" class="select_user_role_permission_filter" placeholder="Select">
+            <mat-option *ngFor="let status of statuses" [value]="status">{{status.viewValue}}</mat-option>
+          </mat-select>
+        </div>
+
+      </div>
+
+      <div class="button_group pt-3 d-flex justify-content-center align-items-center">
+        <button *ngIf="selectedCar==='Transaction By Date'" (click)="toggleShow1()"  mat-raised-button color="success" class="save"> Submit</button>
+        <button *ngIf="selectedCar==='Bulk Top Up By Date'" (click)="toggleShow()" mat-raised-button color="success" class="save"> Submit</button>
+      </div>
+
+  <div class="row pt-2">
+    <div class="trans-table-pagination">
+<!--      Bulk Top Up Date Table-->
+      <table mat-table [dataSource]="dataSource" *ngIf="isShown && selectedCar=='Bulk Top Up By Date'">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef> No </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.no}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionType">
+          <th mat-header-cell *matHeaderCellDef> Transaction Type </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.transactionType}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="telecomName">
+          <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+          <td mat-cell *matCellDef="let element">
+            {{element.telecomName}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="process">
+          <th mat-header-cell *matHeaderCellDef> Process </th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.process}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fileName">
+          <th mat-header-cell *matHeaderCellDef>File Name</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.fileName}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionId">
+          <th mat-header-cell *matHeaderCellDef>OK$ Transaction ID</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.transactionId}}
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="bulkReferenceNo">
+          <th mat-header-cell *matHeaderCellDef> Bulk Top Up Reference No </th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.bulkReferenceNo}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.status}}
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="fail">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Fail Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.fail}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="success">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Success Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.success}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalRequest">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.totalRequest}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="failPrice">
+          <th mat-header-cell *matHeaderCellDef>Failure Price</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.failPrice}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="successPrice">
+          <th mat-header-cell *matHeaderCellDef>Success Price</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.successPrice}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="debitAccType">
+          <th mat-header-cell *matHeaderCellDef>Debit OK$ Account Type</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.debitAccType}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="debitNo">
+          <th mat-header-cell *matHeaderCellDef>Debit OK$ Number</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.debitNo}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalTransactionAmt">
+          <th mat-header-cell *matHeaderCellDef>Total Transaction Amount</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.totalTransactionAmt}}
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="refundReason">
+          <th mat-header-cell *matHeaderCellDef>Refund Transaction Reason</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.refundReason}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="refundId">
+          <th mat-header-cell *matHeaderCellDef>Refund OK$ Transaction ID</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.refundId}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="refundStatus">
+          <th mat-header-cell *matHeaderCellDef>Refund Status</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.refundStatus}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateTime">
+          <th mat-header-cell *matHeaderCellDef>Created Date & Time</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.dateTime}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="view">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">
+            <a [routerLink]="'../transaction-detail-view'">
+              <img class="actionImage" [src]="element.view" matTooltip="Edit"
+                   aria-label="Button that displays a tooltip when focused or hovered over"/>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+<!--      Transaction Date Table-->
+      <table mat-table [dataSource]="dataSource1" *ngIf="isShown1 && selectedCar=='Transaction By Date'">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef> No </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.no}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionType">
+          <th mat-header-cell *matHeaderCellDef> Transaction Type </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.transactionType}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="telecomName">
+          <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+          <td mat-cell *matCellDef="let element">
+            {{element.telecomName}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fileName">
+          <th mat-header-cell *matHeaderCellDef>File Name</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.fileName}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionId">
+          <th mat-header-cell *matHeaderCellDef>OK$ Transaction ID</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.transactionId}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalRequest">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.totalRequest}}
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="bulkReferenceNo">
+          <th mat-header-cell *matHeaderCellDef> Bulk Top Up Reference No </th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.bulkReferenceNo}}
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="fail">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Fail Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.fail}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="success">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Success Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.success}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="topUpStatus">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.topUpStatus}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="failPrice">
+          <th mat-header-cell *matHeaderCellDef>Failure Price</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.failPrice}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="debitAccType">
+          <th mat-header-cell *matHeaderCellDef>Debit OK$ Account Type</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.debitAccType}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="debitNo">
+          <th mat-header-cell *matHeaderCellDef>Debit OK$ Number</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.debitNo}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalTransactionAmt">
+          <th mat-header-cell *matHeaderCellDef>Total Transaction Amount</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.totalTransactionAmt}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalPrice">
+          <th mat-header-cell *matHeaderCellDef>Total Transaction Amount</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.totalPrice}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="refundReason">
+          <th mat-header-cell *matHeaderCellDef>Refund Transaction Reason</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.refundReason}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="refundId">
+          <th mat-header-cell *matHeaderCellDef>Refund OK$ Transaction ID</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.refundId}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="refundStatus">
+          <th mat-header-cell *matHeaderCellDef>Refund Status</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.refundStatus}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionDate">
+          <th mat-header-cell *matHeaderCellDef>Refund Status</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.transactionDate}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateTime">
+          <th mat-header-cell *matHeaderCellDef>Created Date & Time</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.dateTime}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef>Created Date & Time</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.description}}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+      </table>
+    </div>
+    <mat-toolbar>
+      <mat-paginator *ngIf="isShown && selectedCar=='Bulk Top Up By Date' || isShown1 && selectedCar=='Transaction By Date'" class="mat-paginator-companyName" [pageSizeOptions]="[20, 25, 50, 100]"
+                     showFirstLastButtons
+                     aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </mat-toolbar>
+  </div>
+
+</div>
+

@@ -1,0 +1,376 @@
+<div class="container-fluid">
+  <div class="row m-2">
+   <div class="col-12 col-xl-6">
+     <mat-card class="m-2 ">
+       <div class="d-flex justify-content-between align-items-center">
+         <h4>Data Plan Amount</h4>
+         <div class="d-flex justify-content-between align-items-center">
+           <img src="../../../assets/icons/Filter.svg" class="menu-icon me-3" alt="" matTooltip="Filter"
+                aria-label="Button that displays a tooltip when focused or hovered over" (click)="openDialog()">
+           <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+             <select matNativeControl required class=" mat-select-filter">
+               <option value="option1">Monthly Wise Amount</option>
+               <option value="2">Daily Wise Amount</option>
+               <option value="3">Weekly Wise Amount</option>
+               <option value="4">Quarterly Wise Amount</option>
+               <option value="5" >Half Yearly Wise Amount</option>
+               <option value="6" >Yearly Wise Amount</option>
+             </select>
+           </mat-form-field>
+         </div>
+       </div>
+       <div class="d-flex align-items-baseline justify-content-center">
+         <div class="dataPlan-symbol me-2"></div>
+         <p class="fw-bold" >Data Plan Amount</p>
+       </div>
+       <ngx-charts-line-chart [routerLink]="'dataplan-chart'"
+        [scheme]="colorScheme3"
+        [view]="view"
+         [showXAxisLabel]="showXAxisLabel1"
+         [showYAxisLabel]="showYAxisLabel1"
+         [xAxis]="xAxis"
+         [yAxis]="yAxis"
+         [xAxisLabel]="xAxisLabel1"
+         [yAxisLabel]="yAxisLabel1"
+         [timeline]="timeline1"
+         [results]="dataPlan"
+         (select)="onSelect($event)"
+       >
+       </ngx-charts-line-chart >
+       <div class="my-5 border-1">
+         <div class="col-12 col-md-4 col-xl-4 dash-card-2">
+           <div class="text-center">
+             <img src="../../../assets/icons/D -1.svg" alt="" class="tr-img"
+                  style="height: 50px;width: 50px;">
+
+             <div class="text-center fw-bold">
+               <p>Total Transaction Count</p>
+               <h3>3,000</h3>
+             </div>
+           </div>
+         </div>
+         <div class="col-12 col-md-4 col-xl-4 dash-card-2">
+           <div class="text-center">
+             <img src="../../../assets/icons/D -2.svg" alt="" class="tr-img"
+                  style="height: 50px;width: 50px;">
+             <div class="text-center fw-bold">
+               <p>Total Mobile Number Count</p>
+               <h3>5,700</h3>
+             </div>
+           </div>
+         </div>
+         <div class="col-12 col-md-4 col-xl-4 dash-card-2 ">
+           <div class="text-center">
+             <img src="../../../assets/icons/D -3.svg" alt="" class="tr-img"
+                  style="height: 50px;width: 50px;">
+
+             <div class="text-center fw-bold">
+               <p>Total Amount</p>
+               <h3>2,300,000</h3>
+             </div>
+           </div>
+         </div>
+       </div>
+     </mat-card>
+   </div>
+
+   <div class="col-12 col-xl-6">
+     <mat-card class="m-2 ">
+       <div class="d-flex justify-content-between align-items-center">
+         <h4>Top Up Amount</h4>
+         <div class="d-flex justify-content-between align-items-center">
+           <img src="../../../assets/icons/Filter.svg" class="menu-icon me-3" alt="" matTooltip="Filter"
+                aria-label="Button that displays a tooltip when focused or hovered over" (click)="openDialog()">
+           <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+             <select matNativeControl required class=" mat-select-filter">
+               <option value="option1">Monthly Wise Amount</option>
+               <option value="2">Daily Wise Amount</option>
+               <option value="3">Weekly Wise Amount</option>
+               <option value="4">Quarterly Wise Amount</option>
+               <option value="5" >Half Yearly Wise Amount</option>
+               <option value="6" >Yearly Wise Amount</option>
+             </select>
+           </mat-form-field>
+         </div>
+       </div>
+       <div class="d-flex align-items-baseline justify-content-center">
+         <div class="mobileNoCount-symbol me-2"></div>
+         <p class="fw-bold">Mobile Number Count</p>
+       </div>
+       <div class="row">
+         <div class=" chartSize"  #barChart [routerLink]="'top-up-chart'">
+           <ngx-charts-bar-vertical
+           [view]="[barChart.offsetWidth, 500]"
+             [scheme]="colorScheme3"
+             [results]="shareCost"
+             [gradient]="gradient"
+             [xAxis]="showXAxis"
+             [yAxis]="showYAxis"
+             [showXAxisLabel]="showXAxisLabel"
+             [showYAxisLabel]="showYAxisLabel"
+             [yAxisLabel]="yAxisLabel"
+             [xAxisLabel]="xAxisLabel"
+             [legendTitle]="legendTitle"
+             (select)="onSelect($event)">
+           </ngx-charts-bar-vertical>
+           <!-- [xAxisLabel]="xAxisLabel" -->
+         </div>
+       </div>
+       <div class="row">
+         <div class="dash-card-1">
+           <div class=" dash-card">
+             <div class="text-left pb-3">
+               <img src="../../../assets/icons/D -1.svg" alt="" class="tr-img"
+                    style="height: 50px;width: 50px;" >
+               <div>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <span>Total Transaction Count</span>
+                   <span>-2,000</span>
+                 </div>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <span>Total Multiple Transaction Count</span>
+                   <span>-1,000</span>
+                 </div>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <span>Total Single Transaction Count</span>
+                   <span>-900</span>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class=" dash-card" style="padding-bottom: 33px">
+             <div class="text-left">
+               <img src="../../../assets/icons/D -2.svg" alt="" class="tr-img"
+                    style="height: 50px;width: 50px;">
+               <div>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <span>Total Bulk Mobile No Count</span>
+                   <span>-1,000</span>
+                 </div>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <span>Total Multiple Mobile Number Count</span>
+                   <span>-900</span>
+                 </div>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <span>Total Single Mobile No Count</span>
+                   <span>-600</span>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class=" dash-card " style="padding-bottom: 5px">
+             <div class="text-left" style="padding-bottom: 30px">
+               <img src="../../../assets/icons/D -3.svg" alt="" class="tr-img"
+                    style="height: 50px;width: 50px;">
+               <div>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <span>Total Bulk Single Amount</span>
+                   <span>-900</span>
+                 </div>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <span>Total Multiple Single Amount</span>
+                   <span>-700</span>
+                 </div>
+                 <div class="d-flex justify-content-between align-items-center">
+                   <span>Total Single Amount</span>
+                   <span>-400</span>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </mat-card>
+   </div>
+
+  </div>
+
+  <div class="row m-2">
+    <div class="col-12 col-xl-6">
+      <mat-card class="m-2 ">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4>Top Up Total Amount</h4>
+          <div class="d-flex justify-content-between align-items-center">
+            <img src="../../../assets/icons/Filter.svg" class="menu-icon me-3" alt="" matTooltip="Filter"
+                 aria-label="Button that displays a tooltip when focused or hovered over" (click)="openDialog()">
+            <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+              <select matNativeControl required class=" mat-select-filter">
+                <option value="option1">Monthly Wise Amount</option>
+                <option value="2">Daily Wise Amount</option>
+                <option value="3">Weekly Wise Amount</option>
+                <option value="4">Quarterly Wise Amount</option>
+                <option value="5" >Half Yearly Wise Amount</option>
+                <option value="6" >Yearly Wise Amount</option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Table-->
+        <table mat-table [routerLink]="'topuptotal-chart'"  [dataSource]="dataSource2" class="mat-elevation-z8 demo-table">
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef>Month</th>
+            <td mat-cell *matCellDef="let element" style="width: 50%;">{{element.position}}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Amount MMK</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns2;"
+          ></tr>
+        </table>
+
+        <div class="my-5 border-1">
+          <div class="col-12 col-md-4 col-xl-4 dash-card-2">
+            <div class="text-center">
+              <img src="../../../assets/icons/D -1.svg" alt="" class="tr-img"
+                   style="height: 50px;width: 50px;">
+
+              <div class="text-center fw-bold">
+                <p>Total Transaction Count</p>
+                <h3>3,000</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-xl-4 dash-card-2">
+            <div class="text-center">
+              <img src="../../../assets/icons/D -2.svg" alt="" class="tr-img"
+                   style="height: 50px;width: 50px;">
+              <div class="text-center fw-bold">
+                <p>Total Mobile Number Count</p>
+                <h3>6,000</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-xl-4 dash-card-2 ">
+            <div class="text-center">
+              <img src="../../../assets/icons/D -3.svg" alt="" class="tr-img"
+                   style="height: 50px;width: 50px;">
+
+              <div class="text-center fw-bold">
+                <p>Total Amount</p>
+                <h3>2,000,000</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+    <div class="col-12 col-xl-6">
+      <mat-card class="m-2 ">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4>Process Total Amount</h4>
+          <div class="d-flex justify-content-between align-items-center">
+            <img src="../../../assets/icons/Filter.svg" class="menu-icon me-3" alt="" matTooltip="Filter"
+                 aria-label="Button that displays a tooltip when focused or hovered over" (click)="openDialog()">
+            <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+              <select matNativeControl required class=" mat-select-filter">
+                <option value="option1">Monthly Wise Amount</option>
+                <option value="2">Daily Wise Amount</option>
+                <option value="3">Weekly Wise Amount</option>
+                <option value="4">Quarterly Wise Amount</option>
+                <option value="5" >Half Yearly Wise Amount</option>
+                <option value="6" >Yearly Wise Amount</option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="d-flex align-items-baseline justify-content-center">
+          <div class="mobileNoCount-symbol me-2"></div>
+          <p class="fw-bold">Special Offer Amount</p>
+        </div>
+        <div class="row">
+          <div class=" chartSize" #barChart2 [routerLink]="'processtotal-chart'" >
+            <ngx-charts-bar-horizontal
+              [scheme]="colorScheme3"
+              [view]="[barChart2.offsetWidth, 500]"
+              [results]="single"
+              [gradient]="gradient"
+              [xAxis]="showXAxis"
+              [yAxis]="showYAxis"
+              (select)="onSelect($event)"
+            >
+            </ngx-charts-bar-horizontal>
+          </div>
+        </div>
+        <div class="row">
+          <div class="dash-card-1">
+            <div class="col-12 col-md-4 col-xl-4 dash-card ">
+              <div class="text-left pb-3">
+                <img src="../../../assets/icons/D -1.svg" alt="" class="tr-img"
+                     style="height: 50px;width: 50px;">
+
+                <div class="text-left">
+                  <div class="row">
+                    <div class="col-8">Total MPT Transaction Count</div>
+                    <div class="col-4">-2,000</div>
+                    <div class="col-8">Total Mytel Transaction Count</div>
+                    <div class="col-4">-1,000</div>
+                    <div class="col-8">Total Ooredoo Transaction Count</div>
+                    <div class="col-4">-900</div>
+                    <div class="col-8">Total Telenor Transaction Count</div>
+                    <div class="col-4">-1500</div>
+                    <div class="col-8">Total MEC Tel Transaction Count</div>
+                    <div class="col-4">-2,500</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-xl-4 dash-card pb-fix">
+              <div class="text-left">
+                <img src="../../../assets/icons/D -2.svg" alt="" class="tr-img"
+                     style="height: 50px;width: 50px;">
+                <div class="text-left">
+                  <div class="row">
+                    <div class="col-8">Total MPT Mobile No Count</div>
+                    <div class="col-4">-1,000</div>
+                    <div class="col-8">Total Mytel Mobile Number Count</div>
+                    <div class="col-4">-900</div>
+                    <div class="col-8">Total Ooredoo Mobile No Count</div>
+                    <div class="col-4">-600</div>
+                    <div class="col-8">Total Telenor Mobile No Count</div>
+                    <div class="col-4">-720</div>
+                    <div class="col-8">Total MEC Tel Mobile No Count</div>
+                    <div class="col-4">-200</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 col-xl-4 dash-card " style="border: 0">
+              <div class="text-left" style="padding-bottom: 90px">
+                <img src="../../../assets/icons/D -3.svg" alt="" class="tr-img"
+                     style="height: 50px;width: 50px;">
+
+                <div class="text-left pb-1">
+                  <div class="row">
+                    <div class="col-8">Total MPT Count</div>
+                    <div class="col-4">-900</div>
+                    <div class="col-8">Total Mytel Count</div>
+                    <div class="col-4">-700</div>
+                    <div class="col-8">Total Ooredoo Count </div>
+                    <div class="col-4">-400</div>
+                    <div class="col-8">Total Telenor Count </div>
+                    <div class="col-4">-450</div>
+                    <div class="col-8">Total MEC Tel Count </div>
+                    <div class="col-4">-700</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+  </div>
+
+</div>
+

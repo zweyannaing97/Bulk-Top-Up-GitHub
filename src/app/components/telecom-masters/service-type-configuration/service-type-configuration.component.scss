@@ -1,0 +1,24 @@
+::ng-deep .mat-select-panel
+{
+  min-width: calc(100% + 94px) !important;
+}
+
+.select_user_role_permission_filter{
+  height: 55px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 15px 15px;
+  background-color: rgba(0, 0, 0, 0.04);
+  box-shadow: #d6c7ec 3px 3px 3px 0px;
+}
+.table-pagination {
+  overflow: auto;
+}
+
+@media screen and (max-width: 599.99px) {
+  .table-pagination{
+    margin-top: 110px;
+  }
+}

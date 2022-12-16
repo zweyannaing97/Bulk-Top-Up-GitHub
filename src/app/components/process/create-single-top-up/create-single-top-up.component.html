@@ -1,0 +1,144 @@
+<div class="p-3 main-content">
+  <h3>Add Single Top Up Details</h3>
+
+
+  <div class="row p-2">
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Select Telco Name</label>
+      <mat-select panelClass="single-option" class="select_user_role_permission_filter"  placeholder="Select">
+        <mat-option *ngFor="let telecomName of telecomNames" [value]="telecomName">{{telecomName.viewValue}}</mat-option>
+      </mat-select>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Select Service Type</label>
+      <mat-select panelClass="single-option" [(ngModel)]="selectedCar" class="select_user_role_permission_filter" placeholder="Select">
+        <mat-option *ngFor="let serverType of serverTypes" [value]="serverType.value">{{serverType.viewValue}}</mat-option>
+      </mat-select>
+    </div>
+
+  </div>
+
+  <div class="pt-2 demo-table-row" style="overflow: auto">
+<!--    Data Plan Table-->
+    <table mat-table *ngIf="selectedCar==='Data Plan'" [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{element.position}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Select Amount</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef>Description Package</th>
+        <td mat-cell *matCellDef="let element">{{element.weight}}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef>Select Package</th>
+        <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        (click)="getQuestion(row)"
+        [ngClass]="{ 'selected-row' : row.selected }"
+        *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+    </table>
+
+<!--    Special Offer Table-->
+    <table mat-table  *ngIf="selectedCar==='Special Offer'" [dataSource]="dataSource1" class="mat-elevation-z8 demo-table">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{element.position}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Select Amount</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef>Description Package</th>
+        <td mat-cell *matCellDef="let element">{{element.weight}}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef>Select Package</th>
+        <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+      <tr
+        mat-row
+        (click)="getQuestion(row)"
+        [ngClass]="{ 'selected-row' : row.selected }"
+        *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+    </table>
+
+<!--    Top Up Table-->
+    <table mat-table  *ngIf="selectedCar==='Top Up'"  [dataSource]="dataSource2" class="mat-elevation-z8 demo-table">
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef>No.</th>
+    <td  mat-cell *matCellDef="let element" style="width: 5%;">{{element.position}}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Select Amount</th>
+    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+  <tr
+    mat-row
+    (click)="getQuestion(row)"
+    [ngClass]="{ 'selected-row' : row.selected }"
+    *matRowDef="let row; columns: displayedColumns2;"
+  ></tr>
+</table>
+
+  </div>
+  <div class="row">
+
+<!--    *ngif Top-Up is selected-->
+    <div *ngIf="selectedCar==='Top Up'" class="col-12 col-md-6 col-lg-4 pt-5">
+
+      <h5></h5>
+      <h5>Amount</h5>
+      <mat-form-field appearance="outline">
+        <input value="{{selectedQuestion.name}}" matInput placeholder="Enter Amount">
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="selectedCar" class="col-12 col-md-6 col-lg-4 pt-5">
+      <h5>Mobile Number</h5>
+      <mat-form-field appearance="outline">
+        <input  matInput placeholder="09XXXXXXXXX">
+      </mat-form-field>
+    </div>
+  </div>
+
+
+  <mat-toolbar class="mat-toolbar mat-toolbar-single-row d-flex justify-content-center align-items-center">
+    <button *ngIf="selectedCar" mat-raised-button class="pl-5" color="success" [routerLink]="'../create-success-error'">Submit</button>
+  </mat-toolbar>
+</div>
+

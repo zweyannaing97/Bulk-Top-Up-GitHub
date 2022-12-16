@@ -1,0 +1,196 @@
+<div class="p-3 main-content">
+  <h3>Edit User Role Permission</h3>
+
+  <div class="row p-2">
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Upload Profile Image </label>
+      <div>
+        <input (change)="onSelectFile($event)" id="file" accept=".jpg" class="input userRolePermissionFormField" type="file" placeholder="Upload Profile Image">
+        <mat-icon matSuffix class="upload">
+          <div class="col-md-4 profileImage">
+            <img class="profile-preview" [src]="url" alt="Profile Picture">
+          </div>
+        </mat-icon>
+      </div>
+      <small class="text-danger">File Uploads Jpg Format Maximum Size 5 MB.</small>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <h5>User Name <span class="text-danger">*</span> </h5>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Enter User Name" value="username001">
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <h5>Password <span class="text-danger">*</span> </h5>
+      <mat-form-field appearance="outline">
+        <input type="password" matInput placeholder="Enter Password" value="username001">
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div class="row p-2">
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Select Company Name <span class="text-danger">*</span></label>
+      <mat-select [formControl]="companylists"  class="select_user_role_permission_filter" multiple placeholder="Select">
+        <mat-select-trigger>
+          {{companylists.value ? companylists.value[0] : ''}}
+          <span *ngIf="companylists.value?.length > 1" class="example-additional-selection">
+           (+{{companylists.value.length - 1}} {{companylists.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+        </mat-select-trigger>
+        <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
+            <input class="form-control select_search_box" placeholder="Enter Keywords">
+          <button fxLayout="row" mat-button class="check_uncheck_btn" >
+            <mat-icon class="text-black s-5">
+              check</mat-icon>Check All
+          </button>
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
+            <mat-icon class="text-black s-5">
+              clear</mat-icon>UnCheck All
+          </button>
+        </div>
+        <mat-option  *ngFor="let companyname of companynames" [value]="companyname">{{companyname}}</mat-option>
+      </mat-select>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Select Department <span class="text-danger">*</span></label>
+      <mat-select [formControl]="dpmntlists"  class="select_user_role_permission_filter" multiple placeholder="Select">
+        <mat-select-trigger>
+          {{dpmntlists.value ? dpmntlists.value[0] : ''}}
+          <span *ngIf="dpmntlists.value?.length > 1" class="example-additional-selection">
+           (+{{dpmntlists.value.length - 1}} {{dpmntlists.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+        </mat-select-trigger>
+        <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
+            <input class="form-control select_search_box" placeholder="Enter Keywords">
+          <button fxLayout="row" mat-button class="check_uncheck_btn" >
+            <mat-icon class="text-black s-5">
+              check</mat-icon>Check All
+          </button>
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
+            <mat-icon class="text-black s-5">
+              clear</mat-icon>UnCheck All
+          </button>
+        </div>
+        <mat-option *ngFor="let dpmntname of dpmntnames" [value]="dpmntname">{{dpmntname}}</mat-option>
+      </mat-select>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Select Designation <span class="text-danger">*</span></label>
+      <mat-select  [formControl]="designationlists" class="select_user_role_permission_filter" multiple placeholder="Select">
+        <mat-select-trigger>
+          {{designationlists.value ? designationlists.value[0] : ''}}
+          <span *ngIf="designationlists.value?.length > 1" class="example-additional-selection">
+           (+{{designationlists.value.length - 1}} {{designationlists.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+        </mat-select-trigger>
+        <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
+            <input class="form-control select_search_box" placeholder="Enter Keywords">
+          <button fxLayout="row" mat-button class="check_uncheck_btn" >
+            <mat-icon class="text-black s-5">
+              check</mat-icon>Check All
+          </button>
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
+            <mat-icon class="text-black s-5">
+              clear</mat-icon>UnCheck All
+          </button>
+        </div>
+        <mat-option *ngFor="let designationname of designationnames" [value]="designationname">{{designationname}}</mat-option>
+      </mat-select>
+    </div>
+
+  </div>
+
+  <div class="row p-2">
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Select User Type<span class="text-danger">*</span></label>
+      <mat-select class="select_user_role_permission_filter" panelClass="single-option" placeholder="Select">
+        <mat-option *ngFor="let usertype of usertypes" [value]="usertype">{{usertype.viewValue}}</mat-option>
+      </mat-select>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Select Designation <span class="text-danger">*</span></label>
+      <mat-select [formControl]="transactionlists"  class="select_user_role_permission_filter" multiple placeholder="Select">
+        <mat-select-trigger>
+          {{transactionlists.value ? transactionlists.value[0] : ''}}
+          <span *ngIf="transactionlists.value?.length > 1" class="example-additional-selection">
+           (+{{transactionlists.value.length - 1}} {{transactionlists.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+        </mat-select-trigger>
+        <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
+            <input class="form-control select_search_box" placeholder="Enter Keywords">
+          <button fxLayout="row" mat-button class="check_uncheck_btn" >
+            <mat-icon class="text-black s-5">
+              check</mat-icon>Check All
+          </button>
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
+            <mat-icon class="text-black s-5">
+              clear</mat-icon>UnCheck All
+          </button>
+        </div>
+        <mat-option *ngFor="let transaction of transactions" [value]="transaction">{{transaction}}</mat-option>
+      </mat-select>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Select Role Permission</label>
+      <mat-select class="select_user_role_permission_filter" multiple placeholder="Select">
+        <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
+            <input class="form-control select_search_box" placeholder="Enter Keywords">
+          <button fxLayout="row" mat-button class="check_uncheck_btn" >
+            <mat-icon class="text-black s-5">
+              check</mat-icon>Check All
+          </button>
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
+            <mat-icon class="text-black s-5">
+              clear</mat-icon>UnCheck All
+          </button>
+        </div>
+        <mat-optgroup *ngFor="let group of rolepermissiongroups" [label]="group.name">
+          <mat-option *ngFor="let rolepermission of group.rolepermission" [value]="rolepermission.viewValue">
+            {{rolepermission.viewValue}}
+          </mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </div>
+
+  </div>
+
+  <div class="row p-2">
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <h5>Description</h5>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Enter Description" value="Aye Aye">
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <h5>Mobile Number <span class="text-danger">*</span> </h5>
+      <mat-form-field appearance="outline" class="mobileNo">
+        <span matPrefix>+95 &nbsp;</span>
+        <input matInput placeholder="09XXXXXXXXX" value="09421056929">
+      </mat-form-field>
+    </div>
+
+  </div>
+  <div class="row p-2">
+    <div class="d-flex">
+      <mat-checkbox [checked]= "myModel" class = "example-margin" >
+      </mat-checkbox>
+      <p class="ps-2">Is Active</p>
+    </div>
+  </div>
+  <mat-toolbar class="mat-toolbar mat-toolbar-single-row d-flex justify-content-center align-items-center">
+    <button mat-raised-button  color="warn" [routerLink]="'../../user-role-permission'">Cancel</button>
+    <button mat-raised-button class="pl-5" color="success">Save</button>
+  </mat-toolbar>
+</div>
+

@@ -1,0 +1,211 @@
+<div class="p-3 main-content">
+  <h3>Report Details</h3>
+
+  <div class="row p-2">
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Search By</label>
+      <mat-select panelClass="single-option" class="select_user_role_permission_filter"  style="display: block" placeholder="Select" [(ngModel)]="selectedCar">
+        <mat-option *ngFor="let companyname of companynames" [value]="companyname.value">{{companyname.viewValue}}</mat-option>
+      </mat-select>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+
+      <form action="" [formGroup]="form" *ngIf="selectedCar==='OK$ Transaction By ID'">
+        <h5>OK$ Transaction By ID </h5>
+        <mat-form-field appearance="outline" class="useraddInput">
+          <input matInput placeholder="Enter OK$ Transaction By ID"   formControlName="mobileNumber" (keyup)="formValidation()">
+        </mat-form-field>
+      </form>
+
+      <form action="" [formGroup]="form" *ngIf="selectedCar==='Bulk Top Up By Reference'">
+        <h5>Bulk Top Up By Reference </h5>
+        <mat-form-field appearance="outline" class="useraddInput">
+          <input matInput placeholder="Enter Bulk Top Up By Reference"   formControlName="mobileNumber" (keyup)="formValidation()">
+        </mat-form-field>
+      </form>
+
+      <form action="" [formGroup]="form" *ngIf="selectedCar==='Top Up Ref Number'">
+        <h5>Top Up Ref Number</h5>
+        <mat-form-field appearance="outline" class="useraddInput">
+          <input matInput placeholder="Enter Top Up Ref Number"   formControlName="mobileNumber" (keyup)="formValidation()">
+        </mat-form-field>
+      </form>
+
+      <form action="" [formGroup]="form" *ngIf="selectedCar==='Top Up API Ref Number'">
+        <h5>Top Up API Ref Number</h5>
+        <mat-form-field appearance="outline" class="useraddInput">
+          <input matInput placeholder="Enter Top Up API Ref Number"   formControlName="mobileNumber" (keyup)="formValidation()">
+        </mat-form-field>
+      </form>
+
+      <form action="" [formGroup]="form" *ngIf="selectedCar==='Top Up Mobile Number'">
+        <h5>Top Up Mobile Number</h5>
+        <mat-form-field appearance="outline" class="useraddInput">
+          <input matInput placeholder="Enter Top Up Mobile Number"   formControlName="mobileNumber" (keyup)="formValidation()">
+        </mat-form-field>
+      </form>
+
+      <form action="" [formGroup]="form" *ngIf="selectedCar==='Data Plan Recharge Mobile Number'">
+        <h5>Data Plan Recharge Mobile Number</h5>
+        <mat-form-field appearance="outline" class="useraddInput">
+          <input matInput placeholder="Enter Data Plan Recharge Mobile Number"   formControlName="mobileNumber" (keyup)="formValidation()">
+        </mat-form-field>
+      </form>
+
+      <form action="" [formGroup]="form" *ngIf="selectedCar==='Special Offer Recharge Mobile Number'">
+        <h5>Special Offer Recharge Mobile Number</h5>
+        <mat-form-field appearance="outline" class="useraddInput">
+          <input matInput placeholder="Enter Special Offer Recharge Mobile Number"   formControlName="mobileNumber" (keyup)="formValidation()">
+        </mat-form-field>
+      </form>
+    </div>
+
+  </div>
+  <mat-toolbar class="mat-toolbar mat-toolbar-single-row d-flex justify-content-center align-items-center">
+
+    <button *ngIf="selectedCar && otp_form_valid" (click)="toggleShow()" mat-raised-button class="pl-5" color="success">Submit</button>
+  </mat-toolbar>
+  <div class="row p-2">
+    <div class="report-table-pagination" *ngIf="isShown">
+      <table mat-table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef> Company Name </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.no}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="telecomName">
+          <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.telecomName}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fileName">
+          <th mat-header-cell *matHeaderCellDef> File Name </th>
+          <td mat-cell *matCellDef="let element">
+            {{element.fileName}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="bulkReferenceNo">
+          <th mat-header-cell *matHeaderCellDef> Bulk Top Up Reference Number </th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.bulkReferenceNo}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status </th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.status}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalTopUp">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up </th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.totalTopUp}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fail">
+          <th mat-header-cell *matHeaderCellDef>Fail Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.fail}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="success">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Success Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.success}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalRequest">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.totalRequest}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="failPrice">
+          <th mat-header-cell *matHeaderCellDef>Failure Price</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.failPrice}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="successPrice">
+          <th mat-header-cell *matHeaderCellDef>Success Price</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.successPrice}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionAmt">
+          <th mat-header-cell *matHeaderCellDef>Total Transaction Amount</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.transactionAmt}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="denomanationAmt">
+          <th mat-header-cell *matHeaderCellDef>Denomination Amount</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.denomanationAmt}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="mobileCount">
+          <th mat-header-cell *matHeaderCellDef>Total Mobile No Count</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.mobileCount}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="refundStatus">
+          <th mat-header-cell *matHeaderCellDef>Refund Status</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.refundStatus}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateTime">
+          <th mat-header-cell *matHeaderCellDef>Created Date & Time</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.dateTime}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="view">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">
+            <a [routerLink]="'../report-details-view'">
+              <img class="actionImage" [src]="element.view" matTooltip="Edit"
+                   aria-label="Button that displays a tooltip when focused or hovered over"/>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+    </div>
+  </div>
+</div>
+
+<mat-toolbar>
+  <mat-paginator *ngIf="isShown" class="mat-paginator-companyName" [pageSizeOptions]="[20, 25, 50, 100]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</mat-toolbar>

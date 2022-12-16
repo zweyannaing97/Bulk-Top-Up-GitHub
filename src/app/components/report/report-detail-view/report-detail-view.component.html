@@ -1,0 +1,237 @@
+<div class="p-3 main-content">
+ <div class="d-flex justify-content-between align-items-center">
+   <div class="d-flex">
+     <h3 class="routerLink" [routerLink]="'../report-details'">Report Details</h3><h4>/</h4><h4>Bulk Top Up By Reference</h4>
+   </div>
+   <img src="assets/icons/excel%20download%20.svg" alt="" class="crud-btns" matTooltip="Download"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+ </div>
+  <div class="row p-2">
+    <div class="table-pagination">
+      <table mat-table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef> Company Name </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.no}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="telecomName">
+          <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.telecomName}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fileName">
+          <th mat-header-cell *matHeaderCellDef> File Name </th>
+          <td mat-cell *matCellDef="let element">
+            {{element.fileName}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="bulkReferenceNo">
+          <th mat-header-cell *matHeaderCellDef> Bulk Top Up Reference Number </th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.bulkReferenceNo}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status </th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.status}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalTopUp">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up </th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.totalTopUp}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fail">
+          <th mat-header-cell *matHeaderCellDef>Fail Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.fail}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="success">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Success Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.success}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalRequest">
+          <th mat-header-cell *matHeaderCellDef>Total Top Up Request</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.totalRequest}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="failPrice">
+          <th mat-header-cell *matHeaderCellDef>Failure Price</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.failPrice}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="successPrice">
+          <th mat-header-cell *matHeaderCellDef>Success Price</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.successPrice}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionAmt">
+          <th mat-header-cell *matHeaderCellDef>Total Transaction Amount</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.transactionAmt}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="denomanationAmt">
+          <th mat-header-cell *matHeaderCellDef>Denomination Amount</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.denomanationAmt}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="mobileCount">
+          <th mat-header-cell *matHeaderCellDef>Total Mobile No Count</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.mobileCount}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="refundStatus">
+          <th mat-header-cell *matHeaderCellDef>Refund Status</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.refundStatus}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateTime">
+          <th mat-header-cell *matHeaderCellDef>Created Date & Time</th>
+          <td mat-cell *matCellDef="let element" >
+            {{element.dateTime}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="view">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">
+            <a [routerLink]="'../report-details-view'">
+              <img class="actionImage" [src]="element.view" matTooltip="Edit"
+                   aria-label="Button that displays a tooltip when focused or hovered over"/>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <mat-toolbar>
+      <mat-paginator class="mat-paginator-companyName" [pageSizeOptions]="[20, 25, 50, 100]"
+                     showFirstLastButtons
+                     aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </mat-toolbar>
+  </div>
+  <div class="row p-2">
+    <div class="table-pagination1">
+      <table mat-table [dataSource]="dataSource1">
+
+        <!-- Position Column -->
+
+        <ng-container matColumnDef="telecomName">
+          <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.telecomName}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="plan">
+          <th mat-header-cell *matHeaderCellDef> Plan </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.plan}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="mobileNumber">
+          <th mat-header-cell *matHeaderCellDef> Mobile Number </th>
+          <td mat-cell *matCellDef="let element" style="width: 30%;">
+            {{element.mobileNumber}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="rechargedMethod">
+          <th mat-header-cell *matHeaderCellDef> Recharge Method </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.rechargedMethod}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef> Amount </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.amount}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status </th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.status}}
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="refundReason">
+          <th mat-header-cell *matHeaderCellDef>Refund Transaction Reason</th>
+          <td mat-cell *matCellDef="let element" style="width: 30%;">
+            {{element.refundReason}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="refundId">
+          <th mat-header-cell *matHeaderCellDef>Refund OK$ Transaction ID</th>
+          <td mat-cell *matCellDef="let element" style="width: 30%;">
+            {{element.refundId}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="refundAmnt">
+          <th mat-header-cell *matHeaderCellDef>Refund Amount</th>
+          <td mat-cell *matCellDef="let element" style="width: 10%;">
+            {{element.refundAmnt}}
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="dateTime">
+          <th mat-header-cell *matHeaderCellDef>Created Date & Time</th>
+          <td mat-cell *matCellDef="let element" style="width: 30%;">
+            {{element.dateTime}}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+      </table>
+    </div>
+    <mat-toolbar>
+      <mat-paginator class="mat-paginator-companyName" [pageSizeOptions]="[20, 25, 50, 100]"
+                     showFirstLastButtons
+                     aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </mat-toolbar>
+  </div>
+</div>
+

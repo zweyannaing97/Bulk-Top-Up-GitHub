@@ -1,0 +1,23 @@
+<div>
+  <div class="profile-box">
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <img src="../../../../../assets/img/profile-pic.jpg" alt="" class="profile-pic">
+      <p class="text-white fw-bold py-1 user-name" [routerLink]="'../../../../profile'">BULK TOP UP ADMIN</p>
+      <p class="text-white fw-bold">Last Login</p>
+    </div>
+    <div class="text-white d-flex justify-content-between align-items-center">
+      <div>
+        <i class="fa fa-calendar-alt pe-2"></i>
+        <span> Wed, 01-Feb-2022</span>
+      </div>
+      <div>
+        <i class="fa fa-clock pe-2"></i>
+        <span>04:50</span>
+      </div>
+    </div>
+    <hr style="color: white">
+  </div>
+  <mat-nav-list>
+    <app-menu-list-item *ngFor="let item of menuItems" [item]="item"></app-menu-list-item>
+  </mat-nav-list>
+</div>

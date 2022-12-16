@@ -1,0 +1,68 @@
+<div>
+  <div class="title_outer d-flex justify-content-between align-items-center ">
+    <h3 class="text-white">Filter</h3>
+    <h3 class="text-white"><i class="fas fa-times-circle" aria-hidden="true" (click)="onDismiss()" style="cursor: pointer;"></i></h3>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <div class="content_outer">
+
+      <div class="row rowMargin p-3">
+
+        <div class="col-12 col-md-6 col-lg-6 ">
+          <label class="fw-bold pb-3">Select Telecom Name</label>
+          <mat-select [formControl]="telecomNamelists" class="select_user_role_permission_filter" multiple placeholder="Select">
+            <mat-select-trigger>
+              {{telecomNamelists.value ? telecomNamelists.value[0] : ''}}
+              <span *ngIf="telecomNamelists.value?.length > 1" class="example-additional-selection">
+           (+{{telecomNamelists.value.length - 1}} {{telecomNamelists.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+            </mat-select-trigger>
+            <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
+              <input class="form-control select_search_box" placeholder="Enter Keywords">
+              <button fxLayout="row" mat-button class="check_uncheck_btn" >
+                <mat-icon class="text-black s-5">
+                  check</mat-icon>Check All
+              </button>
+              <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
+                <mat-icon class="text-black s-5">
+                  clear</mat-icon>UnCheck All
+              </button>
+            </div>
+            <mat-option *ngFor="let telecomName of telecomNames" [value]="telecomName">{{telecomName}}</mat-option>
+          </mat-select>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-6 ">
+          <label class="fw-bold pb-3">Select Service Type</label>
+          <mat-select [formControl]="serviceTypelists" class="select_user_role_permission_filter" multiple placeholder="Select">
+            <mat-select-trigger>
+              {{serviceTypelists.value ? serviceTypelists.value[0] : ''}}
+              <span *ngIf="serviceTypelists.value?.length > 1" class="example-additional-selection">
+           (+{{serviceTypelists.value.length - 1}} {{serviceTypelists.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+            </mat-select-trigger>
+            <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
+              <input class="form-control select_search_box" placeholder="Enter Keywords">
+              <button fxLayout="row" mat-button class="check_uncheck_btn" >
+                <mat-icon class="text-black s-5">
+                  check</mat-icon>Check All
+              </button>
+              <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
+                <mat-icon class="text-black s-5">
+                  clear</mat-icon>UnCheck All
+              </button>
+            </div>
+            <mat-option *ngFor="let serviceType of serviceTypes" [value]="serviceType">{{serviceType}}</mat-option>
+          </mat-select>
+        </div>
+
+      </div>
+
+      <div class="button_group p-3 d-flex justify-content-center align-items-center">
+        <button  mat-raised-button color="warn" class="cancel" aria-hidden="true" (click)="onDismiss()">RESET</button>
+        <button  mat-raised-button color="primary" class="save"> APPLY</button>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>
+

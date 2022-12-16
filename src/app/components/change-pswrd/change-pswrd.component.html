@@ -1,0 +1,30 @@
+<div class="row p-5">
+  <h3>Change Password</h3>
+  <mat-card class="p-5">
+    <div class="col-12 col-lg-4 p-2">
+      <h5>Current Password</h5>
+      <mat-form-field appearance="standard" class="useraddInput">
+        <input matInput placeholder="Enter Current Password" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-lg-4 p-2">
+      <h5>Create New Password</h5>
+      <mat-form-field appearance="standard" class="useraddInput">
+        <input matInput placeholder="Enter New Password" [formControl]="email1" required>
+        <mat-error *ngIf="email1.invalid">{{getErrorMessage1()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12 col-lg-4 p-2">
+      <h5>Confirm New Password</h5>
+      <mat-form-field appearance="standard" class="useraddInput">
+        <input matInput placeholder="Enter New Password Again" [formControl]="email2" required>
+        <mat-error *ngIf="email2.invalid">{{getErrorMessage2()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <mat-toolbar class="mat-toolbar mat-toolbar-single-row d-flex justify-content-center align-items-center pt-3">
+      <button mat-raised-button  color="warn" [routerLink]="'../company-listing'">Cancel</button>
+      <button mat-raised-button class="pl-5" color="primary">Change</button>
+    </mat-toolbar>
+  </mat-card>
+</div>

@@ -1,0 +1,19 @@
+<div class="header">
+ <div class="header-left">
+   <img src="../../../../assets/img/ok-dollar.svg" class="ok-dollar-logo" alt="">
+   <h4 class="logo-title text-white" style="margin-top: 10px;cursor: pointer;" [routerLink]="'../../../dashboard'">BULK TOP UP</h4>
+   <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+ </div>
+  <div class="header-right"></div>
+</div>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+    <app-simple-layout-sidebar></app-simple-layout-sidebar>
+  </mat-drawer>
+
+  <div class="example-sidenav-content" style="display: block">
+
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>

@@ -1,0 +1,15 @@
+New Install Dependencies in Bulk-Top-Up Anuglar-Project
+
+-bootstrap
+-jquery
+-moment.js (npm install moment)
+
+-material-moment-adapter (npm install @angular/material-moment-adapter)
+-ngx-chart (npm i @swimlane/ngx-charts)
+-d3-scale(npm uninstall --save-dev @types/d3-scale)
+
+-npm install ngx-bootstrap --save
+-ng add ngx-bootstrap
+-npm install typescript
+-npm i ngx-mat-circle-counter
+-npm install --save-dev @types/jquery

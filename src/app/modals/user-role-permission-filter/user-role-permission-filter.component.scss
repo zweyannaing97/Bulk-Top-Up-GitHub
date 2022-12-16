@@ -1,0 +1,60 @@
+.cdk-overlay-pane{
+  max-width: 54vw !important;
+}
+.select_user_role_permission_filter{
+  height: 50px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 93%;
+  padding: 15px 15px;
+  background-color: rgba(0, 0, 0, 0.04);
+  box-shadow: #d6c7ec 3px 3px 3px 0px;
+
+}
+.content_outer{
+  padding: 15px 10px 40px 25px;
+}
+label{
+  margin-top: 15px;
+  font-weight: 500;
+}
+::placeholder{
+  color: rgba(80, 75, 75, 0.87);
+  font-size: 14px;
+}
+::-moz-placeholder{
+  color: rgba(80, 75, 75, 0.87);
+  font-size: 14px;
+}
+::-webkit-input-placeholder{
+  color: rgba(80, 75, 75, 0.87);
+  font-size: 14px;
+}
+
+.select_search_box {
+  width: 133px;
+}
+
+.datePicker mat-icon
+{
+  vertical-align: top !important;
+}
+.mat-form-field-underline
+{
+  display: none;
+}
+.mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+.mat-form-field-flex
+{
+  padding-top: 0 !important;
+}
+button.mat-focus-indicator.mat-icon-button.mat-button-base
+{
+  vertical-align: sub;
+}
+.cdk-global-overlay-wrapper .cdk-overlay-pane{
+  width: 80% !important;
+}

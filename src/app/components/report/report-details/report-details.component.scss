@@ -1,0 +1,63 @@
+::ng-deep .mat-select-panel
+{
+  min-width: calc(100% + 94px) !important;
+}
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  padding: 0px 20px;
+}
+.select_user_role_permission_filter{
+  height: 55px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 80%;
+  padding: 15px 15px;
+  background-color: rgba(0, 0, 0, 0.04);
+  box-shadow: #d6c7ec 3px 3px 3px 0px;
+
+}
+.select_search_box {
+  border-radius: 20px;
+  height: 30px;
+}
+
+#file{
+  height: 55px;
+  border: none;
+  box-shadow: #d6c7ec 3px 3px 3px 0px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 13px 15px;
+  font-weight: 500;
+  width: 100%;
+}
+.report-table-pagination {
+  height: calc(55vh - 120px);
+}
+
+table {
+  width: 100%;
+  white-space: nowrap;
+
+}
+  .report-table-pagination  td{
+  background: #eae3f3;
+  padding-right: 15px !important;
+  border-top: solid 10px #f6f6f6;
+}
+
+.report-table-pagination  th {
+  color: #5d5858;
+  font-size: 16px;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: bold;
+  padding: 0px 25px;
+}
+.report-table-pagination td{
+  text-align: center;
+  color: #807c7c;
+  font-weight: 600;
+  padding: 0px 25px;
+}

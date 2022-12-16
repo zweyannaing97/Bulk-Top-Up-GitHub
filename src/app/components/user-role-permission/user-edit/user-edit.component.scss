@@ -1,0 +1,53 @@
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+
+.select_user_role_permission_filter{
+  height: 55px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 90%;
+  padding: 15px 15px;
+  background-color: rgba(0, 0, 0, 0.04);
+  box-shadow: #d6c7ec 3px 3px 3px 0px;
+
+}
+.select_search_box {
+  border-radius: 20px;
+  height: 30px;
+  width: 48%;
+}
+.check_uncheck_btn{
+  padding: 0 !important;
+}
+.filter_select_header{
+  height: 60px;
+}
+#file{
+  height: 55px;
+  border: none;
+  box-shadow: #d6c7ec 3px 3px 3px 0px;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 13px 15px;
+  font-weight: 500;
+  width: 90%;
+}
+.upload {
+  margin-left: -35px !important;
+  vertical-align: middle;
+  color: #000;
+}
+input[type=file]::-webkit-file-upload-button {
+  display: none;
+}
+.profile-preview {
+  position: absolute;
+  width: 27px;
+}
+
+
+

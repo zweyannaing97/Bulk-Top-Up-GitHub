@@ -1,0 +1,215 @@
+<div class=" p-3">
+  <div class="d-flex justify-content-between align-items-center pb-2">
+    <h3 >Telecom Price</h3>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="search-form">
+        <input type="text" name="search" placeholder="Search" class="search-bar" autocomplete="off">
+      </div>
+      <img src="assets/icons/excel%20download%20.svg" alt="" class="crud-btns pe-2" matTooltip="Download"
+           aria-label="Button that displays a tooltip when focused or hovered over">
+    </div>
+  </div>
+  <div>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      [(ngModel)]="favoriteSeason">
+      <mat-radio-button class="example-radio-button pe-5" *ngFor="let season of seasons" [value]="season">
+        {{season}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="table-pagination telecom-table" >
+
+    <!--    //All Table-->
+    <table mat-table *ngIf="favoriteSeason=='All'" [dataSource]="dataSource" >
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="numberId">
+        <th mat-header-cell *matHeaderCellDef> Number </th>
+        <td mat-cell *matCellDef="let element" style="width: 5%;">
+          {{element.numberId}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telecomServiceName">
+        <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+        <td mat-cell *matCellDef="let element" style="width: 20%;">
+          {{element.telecomServiceName}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telecomServiceType">
+        <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+        <td mat-cell *matCellDef="let element" style="width: 20%;">
+          {{element.telecomServiceType}}
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+
+
+      <!-- Weight Column -->
+
+      <ng-container matColumnDef="isActive">
+        <th mat-header-cell *matHeaderCellDef> Is Active </th>
+        <td mat-cell *matCellDef="let element"> {{element.isActive}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef> Amount </th>
+        <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="remarks">
+        <th mat-header-cell *matHeaderCellDef> Remarks </th>
+        <td mat-cell *matCellDef="let element"> {{element.remarks}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="descriptionOne">
+        <th mat-header-cell *matHeaderCellDef> Description One </th>
+        <td mat-cell *matCellDef="let element"> {{element.descriptionOne}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="descriptionTwo">
+        <th mat-header-cell *matHeaderCellDef> Description Two </th>
+        <td mat-cell *matCellDef="let element"> {{element.descriptionTwo}} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!--    //Active Table-->
+    <table mat-table *ngIf="favoriteSeason=='Active'" [dataSource]="dataSource" >
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="numberId">
+        <th mat-header-cell *matHeaderCellDef> Number </th>
+        <td mat-cell *matCellDef="let element" style="width: 5%;">
+          {{element.numberId}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telecomServiceName">
+        <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+        <td mat-cell *matCellDef="let element" style="width: 20%;">
+          {{element.telecomServiceName}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telecomServiceType">
+        <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+        <td mat-cell *matCellDef="let element" style="width: 20%;">
+          {{element.telecomServiceType}}
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+
+
+      <!-- Weight Column -->
+
+      <ng-container matColumnDef="isActive">
+        <th mat-header-cell *matHeaderCellDef> Is Active </th>
+        <td mat-cell *matCellDef="let element"> {{element.isActive}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef> Amount </th>
+        <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="remarks">
+        <th mat-header-cell *matHeaderCellDef> Remarks </th>
+        <td mat-cell *matCellDef="let element"> {{element.remarks}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="descriptionOne">
+        <th mat-header-cell *matHeaderCellDef> Description One </th>
+        <td mat-cell *matCellDef="let element"> {{element.descriptionOne}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="descriptionTwo">
+        <th mat-header-cell *matHeaderCellDef> Description Two </th>
+        <td mat-cell *matCellDef="let element"> {{element.descriptionTwo}} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!--    //Is Active Table-->
+    <table mat-table *ngIf="favoriteSeason=='Is Active'" [dataSource]="dataSource1" >
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="numberId">
+        <th mat-header-cell *matHeaderCellDef> Number </th>
+        <td mat-cell *matCellDef="let element" style="width: 5%;">
+          {{element.numberId}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telecomServiceName">
+        <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+        <td mat-cell *matCellDef="let element" style="width: 20%;">
+          {{element.telecomServiceName}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telecomServiceType">
+        <th mat-header-cell *matHeaderCellDef> Telecom Name </th>
+        <td mat-cell *matCellDef="let element" style="width: 20%;">
+          {{element.telecomServiceType}}
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+
+
+      <!-- Weight Column -->
+
+      <ng-container matColumnDef="isActive">
+        <th mat-header-cell *matHeaderCellDef> Is Active </th>
+        <td mat-cell *matCellDef="let element"> {{element.isActive}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef> Amount </th>
+        <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="remarks">
+        <th mat-header-cell *matHeaderCellDef> Remarks </th>
+        <td mat-cell *matCellDef="let element"> {{element.remarks}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="descriptionOne">
+        <th mat-header-cell *matHeaderCellDef> Description One </th>
+        <td mat-cell *matCellDef="let element"> {{element.descriptionOne}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="descriptionTwo">
+        <th mat-header-cell *matHeaderCellDef> Description Two </th>
+        <td mat-cell *matCellDef="let element"> {{element.descriptionTwo}} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+  </div>
+  <mat-toolbar>
+    <mat-paginator *ngIf="favoriteSeason" class="mat-paginator-companyName" [pageSizeOptions]="[20, 25, 50, 100]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </mat-toolbar>
+</div>
+
+

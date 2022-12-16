@@ -1,0 +1,48 @@
+<div class="p-3 main-content">
+  <h3>Add Multiple Top Up Details</h3>
+
+
+  <div class="row p-2 pb-3">
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Select Telco Name</label>
+      <mat-select panelClass="single-option" class="select_user_role_permission_filter"  placeholder="Select">
+        <mat-option *ngFor="let telecomName of telecomNames" [value]="telecomName">{{telecomName.viewValue}}</mat-option>
+      </mat-select>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 ">
+      <label class="fw-bold pb-3">Select Service Type</label>
+      <mat-select panelClass="single-option"  [(ngModel)]="selectedCar" class="select_user_role_permission_filter" placeholder="Select">
+        <mat-option *ngFor="let serverType of serverTypes" [value]="serverType">{{serverType.viewValue}}</mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+  <div class="row pt-4 " *ngIf="selectedCar">
+    <div class="d-flex justify-content-end">
+      <button mat-raised-button class="downloadBtn"  color="dark">
+        <mat-icon class="text-white">get_app</mat-icon>
+        Format
+      </button>
+    </div>
+    <div class="row pt-4">
+      <div class="col-12 col-md-6 col-lg-4 ">
+        <label class="fw-bold pb-3">Upload File </label>
+        <div>
+          <input id="file" accept=".xls,.xlsx"  class="input userRolePermissionFormField" type="file" placeholder="Upload Profile Image">
+          <mat-icon class="upload">create_new_folder</mat-icon>
+        </div>
+        <small class="text-danger">* Upload Allow Different Amount</small>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+<mat-toolbar class="mat-toolbar mat-toolbar-single-row d-flex justify-content-center align-items-center">
+  <button *ngIf="selectedCar" mat-raised-button class="pl-5" color="success" [routerLink]="'../create-multiple-success-error'">Submit</button>
+</mat-toolbar>

@@ -1,0 +1,42 @@
+<div class="login-s2">
+  <div class="signup-block">
+
+    <!-- <div class="signup-container">
+        <div class="container">
+          <div>
+            <a href="javascript:void(0);">
+              <img src="" class="brand" alt="logo"> 
+              OK$ BULK PAYMENT
+            </a>
+          </div>
+          <div class="text-right">
+          </div>
+        </div>
+      </div> -->
+
+    <div class="container d-flex-h-full">
+      <div class="content" fxLayout="row" fxLayoutAlign="end center" fxFlexFill>
+        <div fxFlex.gt-sm="35" fxFlex="100">
+          <h3 class="font-weight-bolder text-center auth-head">OK$ Bulk Top Up</h3>
+          <div class="login-wrapper">
+            <div>
+              <h4 class="mb-40 text-center">OTP Expired</h4>
+              <mat-form-field appearance="outline">
+                <mat-label>Enter OTP</mat-label>
+                <mat-icon matPrefix class="field-icon">sms</mat-icon>
+                <input matInput placeholder="Enter OTP">
+                <mat-hint>Enter OTP received via SMS on your registered mobile number</mat-hint>
+              </mat-form-field>
+
+              <div fxLayout="row" fxLayoutAlign="space-around center" fxFlexFill fxLayoutGap="20px" class="mt-10">
+                <button mat-raised-button color="success">Resend</button>
+                <button mat-raised-button color="warn" [routerLink]="['/auth/forgot-password']">Cancel</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

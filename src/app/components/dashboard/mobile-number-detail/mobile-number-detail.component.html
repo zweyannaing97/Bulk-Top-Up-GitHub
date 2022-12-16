@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="col-12">
+    <mat-card class="m-2 ">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex">
+            <h4 class="breadCrumb" [routerLink]="'../top-up-chart'">Top Up Amount/</h4>
+            <h4 class="breadCrumb">Bulk Top Up/</h4>
+            <h4 class="breadCrumb" [routerLink]="'../transaction-detail'">Transaction Detail/</h4>
+            <h4 class="">Mobile Number Detail</h4>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <img src="../../../../assets/icons/Filter.svg" class="menu-icon me-3" alt="" matTooltip="Filter"
+                 aria-label="Button that displays a tooltip when focused or hovered over" (click)="openDialog()">
+            <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+              <select matNativeControl required class=" mat-select-filter">
+                <option value="option1">Monthly Wise Amount</option>
+                <option value="2">Daily Wise Amount</option>
+                <option value="3">Weekly Wise Amount</option>
+                <option value="4">Quarterly Wise Amount</option>
+                <option value="5" >Half Yearly Wise Amount</option>
+                <option value="6" >Yearly Wise Amount</option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="d-flex align-items-baseline justify-content-center">
+          <div class="mobileNoCount-symbol me-2"></div>
+          <p class="fw-bold">Mobile Number Count</p>
+        </div>
+        <div class=" chartSize" #barChart [routerLink]="'top-up-chart'">
+          <ngx-charts-bar-vertical
+            [view]="[barChart.offsetWidth, 450]"
+            [barPadding]="15"
+            [scheme]="colorScheme3"
+            [results]="shareCost"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [legendTitle]="legendTitle"
+            (select)="onSelect($event)">
+          </ngx-charts-bar-vertical>
+          <!-- [xAxisLabel]="xAxisLabel" -->
+        </div>
+      </div>
+      <div class="my-5 border-1 row">
+        <div class="col-12 col-md-4 col-xl-4 dash-card-2">
+          <div class="text-center">
+            <img src="../../../../assets/icons/D -1.svg" alt="" class="tr-img"
+                 style="height: 50px;width: 50px;">
+
+            <div class="text-center fw-bold">
+              <p>Total Transaction Count</p>
+              <h3>3,000</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-xl-4 dash-card-2">
+          <div class="text-center">
+            <img src="../../../../assets/icons/D -2.svg" alt="" class="tr-img"
+                 style="height: 50px;width: 50px;">
+            <div class="text-center fw-bold">
+              <p>Total Mobile Number Count</p>
+              <h3>5,700</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-xl-4 dash-card-2 ">
+          <div class="text-center">
+            <img src="../../../../assets/icons/D -3.svg" alt="" class="tr-img"
+                 style="height: 50px;width: 50px;">
+
+            <div class="text-center fw-bold">
+              <p>Total Amount</p>
+              <h3>2,300,000</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

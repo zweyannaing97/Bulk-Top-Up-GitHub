@@ -1,0 +1,106 @@
+<div class="container-fluid">
+  <div class="col-12">
+    <mat-card class="m-2 ">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4>Process Total Amount</h4>
+          <div class="d-flex justify-content-between align-items-center">
+            <img src="../../../../assets/icons/Filter.svg" class="menu-icon me-3" alt="" matTooltip="Filter"
+                 aria-label="Button that displays a tooltip when focused or hovered over" (click)="openDialog()">
+            <mat-form-field appearance="outline" style="display: block; padding-bottom: 0;" class="dashboardSelect">
+              <select matNativeControl required class=" mat-select-filter">
+                <option value="option1">Monthly Wise Amount</option>
+                <option value="2">Daily Wise Amount</option>
+                <option value="3">Weekly Wise Amount</option>
+                <option value="4">Quarterly Wise Amount</option>
+                <option value="5" >Half Yearly Wise Amount</option>
+                <option value="6" >Yearly Wise Amount</option>
+              </select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="d-flex align-items-baseline justify-content-center">
+          <div class="mobileNoCount-symbol me-2"></div>
+          <p class="fw-bold">Special Offer Amount</p>
+        </div>
+        <div class=" chartSize" #verticalBar [routerLink]="'./share-cost-amount-company-base'">
+          <ngx-charts-bar-horizontal
+            [scheme]="colorScheme3"
+            [view]="[verticalBar.offsetWidth, 450]"
+            [results]="single"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [barPadding]="30"
+            (select)="onSelect($event)"
+          >
+          </ngx-charts-bar-horizontal>
+        </div>
+      </div>
+      <div class="row dash-card-1 mt-3">
+        <div class="col-12 col-md-4 col-xl-4 dash-card">
+          <div class="text-left">
+            <img src="../../../../assets/icons/D -1.svg" alt="" class="tr-img"
+                 style="height: 50px;width: 50px;">
+
+            <div class="text-left">
+              <div class="row">
+                <div class="col-8">Total MPT Transaction Count</div>
+                <div class="col-4">-2,000</div>
+                <div class="col-8">Total Mytel Transaction Count</div>
+                <div class="col-4">-1,000</div>
+                <div class="col-8">Total Ooredoo Transaction Count</div>
+                <div class="col-4">-900</div>
+                <div class="col-8">Total Telenor Transaction Count</div>
+                <div class="col-4">-1500</div>
+                <div class="col-8">Total MEC Tel Transaction Count</div>
+                <div class="col-4">-2,500</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-xl-4 dash-card">
+          <div class="text-left">
+            <img src="../../../../assets/icons/D -2.svg" alt="" class="tr-img"
+                 style="height: 50px;width: 50px;">
+            <div class="text-left">
+              <div class="row">
+                <div class="col-8">Total MPT Mobile No Count</div>
+                <div class="col-4">-1,000</div>
+                <div class="col-8">Total Mytel Mobile Number Count</div>
+                <div class="col-4">-900</div>
+                <div class="col-8">Total Ooredoo Mobile No Count</div>
+                <div class="col-4">-600</div>
+                <div class="col-8">Total Telenor Mobile No Count</div>
+                <div class="col-4">-720</div>
+                <div class="col-8">Total MEC Tel Mobile No Count</div>
+                <div class="col-4">-200</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-xl-4 dash-card ">
+          <div class="text-left">
+            <img src="../../../../assets/icons/D -3.svg" alt="" class="tr-img"
+                 style="height: 50px;width: 50px;">
+
+            <div class="text-left pb-1">
+              <div class="row">
+                <div class="col-8">Total MPT Count</div>
+                <div class="col-4">-900</div>
+                <div class="col-8">Total Mytel Count</div>
+                <div class="col-4">-700</div>
+                <div class="col-8">Total Ooredoo Count </div>
+                <div class="col-4">-400</div>
+                <div class="col-8">Total Telenor Count </div>
+                <div class="col-4">-450</div>
+                <div class="col-8">Total MEC Tel Count </div>
+                <div class="col-4">-700</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

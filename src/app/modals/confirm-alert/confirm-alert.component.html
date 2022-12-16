@@ -1,0 +1,8 @@
+<div class="confirm_dialog d-flex flex-column justify-content-center align-items-center p-3">
+  <img class="pb-2" src={{data.image}} alt="" style="width: 35px;">
+  <h4 class="p-2">{{data.message}}</h4>
+  <div class="d-flex justify-content-center align-items-center p-2">
+    <button mat-raised-button color="success" style="margin-right: 15px;" (click)="confirmtask()" class="save">{{data.confirmButtonText}}</button>
+    <button mat-raised-button color="warn" (click)="onDismiss()" class="cancel">{{data.cancelButtonText}}</button>
+  </div>
+</div>
