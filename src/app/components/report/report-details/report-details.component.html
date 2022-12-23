@@ -64,11 +64,10 @@
 
   </div>
   <mat-toolbar class="mat-toolbar mat-toolbar-single-row d-flex justify-content-center align-items-center">
-
-    <button *ngIf="selectedCar && otp_form_valid" (click)="toggleShow()" mat-raised-button class="pl-5" color="success">Submit</button>
+    <button  *ngIf="selectedCar && otp_form_valid" (click)="toggleShow()" class="save" >Submit</button>
   </mat-toolbar>
-  <div class="row p-2">
-    <div class="report-table-pagination" *ngIf="isShown">
+  <div class="row p-3">
+    <div class="table-pagination report-table-pagination" *ngIf="isShown">
       <table mat-table [dataSource]="dataSource">
 
         <!-- Position Column -->
@@ -204,7 +203,7 @@
 </div>
 
 <mat-toolbar>
-  <mat-paginator *ngIf="isShown" class="mat-paginator-companyName" [pageSizeOptions]="[20, 25, 50, 100]"
+  <mat-paginator *ngIf="isShown" class="mat-paginator-companyName" [pageSizeOptions]="[10, 20, 25, 50, 100]"
                  showFirstLastButtons
                  aria-label="Select page of periodic elements">
   </mat-paginator>

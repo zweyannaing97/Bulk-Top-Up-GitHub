@@ -1,4 +1,4 @@
-<div class="p-2 main-content">
+<div class="p-3 main-content">
       <h3>Transaction by date</h3>
       <div class="row rowMargin">
         <div class="col-12 col-md-12 col-lg-6 col-xl-4">
@@ -46,11 +46,12 @@
       </div>
 
       <div class="button_group pt-3 d-flex justify-content-center align-items-center">
-        <button *ngIf="selectedCar==='Transaction By Date'" (click)="toggleShow1()"  mat-raised-button color="success" class="save"> Submit</button>
-        <button *ngIf="selectedCar==='Bulk Top Up By Date'" (click)="toggleShow()" mat-raised-button color="success" class="save"> Submit</button>
+        <button *ngIf="selectedCar==='Transaction By Date'" (click)="toggleShow1()"class="save" >Submit</button>
+        <button *ngIf="selectedCar==='Bulk Top Up By Date'" (click)="toggleShow()" class="save" >Submit</button>
+      
       </div>
 
-  <div class="row pt-2">
+  <div class="row p-2">
     <div class="trans-table-pagination">
 <!--      Bulk Top Up Date Table-->
       <table mat-table [dataSource]="dataSource" *ngIf="isShown && selectedCar=='Bulk Top Up By Date'">

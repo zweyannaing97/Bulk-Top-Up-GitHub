@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl,FormGroup, Validators} from '@angular/forms';
 @Component({
   selector: 'app-change-pswrd',
   templateUrl: './change-pswrd.component.html',
   styleUrls: ['./change-pswrd.component.scss']
 })
 export class ChangePswrdComponent implements OnInit {
+
+  showPassword = false;
+  login_form!: FormGroup;
+  hide = true;
+  hide1 = true;
+  hide2 = true;
+
   email = new FormControl('', [Validators.required]);
   email1 = new FormControl('', [Validators.required]);
   email2 = new FormControl('', [Validators.required]);

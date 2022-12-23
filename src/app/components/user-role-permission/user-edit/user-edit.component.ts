@@ -42,7 +42,7 @@ export class UserEditComponent implements OnInit {
   transactions: string[] = ['Dashboard', 'User Role Master', 'User Role Permission', 'Telecom Masters', 'Process', 'Report','Change Password'];
   transactionlists = new FormControl;
 
-  rolepermissiongroups = [
+  rolepermissiongroups  = [
     {
       name: 'Dashboard',
       rolepermission: [
@@ -107,4 +107,7 @@ export class UserEditComponent implements OnInit {
       ],
     },
   ];
+
+  rolepermissionlists = new FormControl;
+
 }

@@ -59,6 +59,7 @@ export class ServiceTypeConfigurationComponent implements OnInit {
   displayedColumns: string[] = ['numberId','telecomServiceName','telecomServiceType', 'isActive', 'action'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   dataSource1 = new MatTableDataSource<PeriodicElement1>(ELEMENT_DATA1);
+  dataSource2 = new MatTableDataSource<PeriodicElement2>(ELEMENT_DATA2);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit() {
@@ -98,7 +99,25 @@ export interface PeriodicElement1 {
 
 }
 const ELEMENT_DATA1: PeriodicElement1[] = [
-  {numberId:'1',telecomServiceName: 'Airtel',telecomServiceType:'Fb Pack',  isActive:'No',  action:'assets/icons/Edit.svg'},
+  {numberId:'1',telecomServiceName: 'Ooredoo',telecomServiceType:'Fb Pack',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
+
+  {numberId:'2',telecomServiceName: 'Mytel',telecomServiceType:'Special Offer',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
+
 
 ];
 
+
+export interface PeriodicElement2 {
+  numberId:string;
+  telecomServiceName: string;
+  telecomServiceType: string;
+  isActive: string;
+  action: string;
+
+}
+const ELEMENT_DATA2: PeriodicElement2[] = [
+  {numberId:'1',telecomServiceName: 'Mec Tel',telecomServiceType:'Special Offer',  isActive:'No', action:'assets/icons/Edit.svg'},
+
+  {numberId:'2',telecomServiceName: 'MPT',telecomServiceType:'Top Up',  isActive:'No',  action:'assets/icons/Edit.svg'},
+
+];

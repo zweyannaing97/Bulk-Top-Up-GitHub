@@ -26,11 +26,11 @@
               <mat-form-field class="select_search_box" appearance="standard">
                 <input matInput placeholder="Enter Keywords">
               </mat-form-field>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn" >
               <mat-icon class="text-black s-5">
                 check</mat-icon>Check All
             </button>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2 v-line" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
               <mat-icon class="text-black s-5">
                 clear</mat-icon>UnCheck All
             </button>
@@ -46,11 +46,11 @@
               <mat-form-field class="select_search_box" appearance="standard">
                 <input matInput placeholder="Enter Keywords">
               </mat-form-field>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn " >
               <mat-icon class="text-black s-5">
                 check</mat-icon>Check All
             </button>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2 v-line" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
               <mat-icon class="text-black s-5">
                 clear</mat-icon>UnCheck All
             </button>
@@ -58,6 +58,8 @@
             <mat-option *ngFor="let telecomName of telecomNames" [value]="telecomName">{{telecomName.viewValue}}</mat-option>
           </mat-select>
         </div>
+
+      
 
       </div>
 
@@ -70,11 +72,11 @@
               <mat-form-field class="select_search_box" appearance="standard">
                 <input matInput placeholder="Enter Keywords">
               </mat-form-field>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn " >
               <mat-icon class="text-black s-5">
                 check</mat-icon>Check All
             </button>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2 v-line" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
               <mat-icon class="text-black s-5">
                 clear</mat-icon>UnCheck All
             </button>
@@ -90,11 +92,11 @@
               <mat-form-field class="select_search_box" appearance="standard">
                 <input matInput placeholder="Enter Keywords">
               </mat-form-field>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn " >
               <mat-icon class="text-black s-5">
                 check</mat-icon>Check All
             </button>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2 v-line" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
               <mat-icon class="text-black s-5">
                 clear</mat-icon>UnCheck All
             </button>
@@ -113,11 +115,11 @@
               <mat-form-field class="select_search_box" appearance="standard">
                 <input matInput placeholder="Enter Keywords">
               </mat-form-field>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn" >
               <mat-icon class="text-black s-5">
                 check</mat-icon>Check All
             </button>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2 v-line" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
               <mat-icon class="text-black s-5">
                 clear</mat-icon>UnCheck All
             </button>
@@ -136,11 +138,11 @@
               <mat-form-field class="select_search_box" appearance="standard">
                 <input matInput placeholder="Enter Keywords">
               </mat-form-field>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn" >
               <mat-icon class="text-black s-5">
                 check</mat-icon>Check All
             </button>
-            <button fxLayout="row" mat-button class="check_uncheck_btn mx-2 v-line" >
+            <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
               <mat-icon class="text-black s-5">
                 clear</mat-icon>UnCheck All
             </button>
@@ -161,11 +163,11 @@
 
       </div>
 
-      <div class="button_group pt-5 d-flex justify-content-center align-items-center">
-        <button  mat-raised-button color="warn" class="cancel" aria-hidden="true" (click)="onDismiss()">RESET</button>
-        <button  mat-raised-button color="primary" class="save"> APPLY</button>
-      </div>
     </div>
   </mat-dialog-content>
+  <div class="button_group pt-3 mb-3 d-flex justify-content-center align-items-center">
+    <button class="cancel"  aria-hidden="true" (click)="onDismiss()">Clear</button>
+    <button class="update" >Apply</button>
+  </div>
 </div>
 

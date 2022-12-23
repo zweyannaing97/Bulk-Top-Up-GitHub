@@ -19,3 +19,8 @@
 .mat-form-field-type-mat-native-select .mat-input-element{
   padding: 0 !important;
 }
+
+.mat-drawer-content{
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}

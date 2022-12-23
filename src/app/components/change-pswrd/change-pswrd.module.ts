@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ChangePswrdRoutingModule } from './change-pswrd-routing.module';
 import {FormsModule,ReactiveFormsModule} from "@angular/forms";
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [],
@@ -10,7 +11,8 @@ import {FormsModule,ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     ChangePswrdRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ]
 })
 export class ChangePswrdModule { }

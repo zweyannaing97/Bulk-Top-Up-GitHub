@@ -58,20 +58,20 @@
 
     <div class="col-12 col-md-6 col-lg-4 ">
       <label class="fw-bold pb-3">Select Department <span class="text-danger">*</span></label>
-      <mat-select [formControl]="dpmntlists" class="select_user_role_permission_filter" multiple placeholder="Select">
-          <mat-select-trigger>
-            {{dpmntlists.value ? dpmntlists.value[0] : ''}}
-            <span *ngIf="dpmntlists.value?.length > 1" class="example-additional-selection">
+      <mat-select [formControl]="dpmntlists"  class="select_user_role_permission_filter" multiple placeholder="Select">
+        <mat-select-trigger>
+          {{dpmntlists.value ? dpmntlists.value[0] : ''}}
+          <span *ngIf="dpmntlists.value?.length > 1" class="example-additional-selection">
            (+{{dpmntlists.value.length - 1}} {{dpmntlists.value?.length === 2 ? 'other' : 'others'}})
           </span>
-          </mat-select-trigger>
+        </mat-select-trigger>
         <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
             <input class="form-control select_search_box" placeholder="Enter Keywords">
-          <button fxLayout="row" mat-button class="check_uncheck_btn mx-3" >
+          <button fxLayout="row" mat-button class="check_uncheck_btn" >
             <mat-icon class="text-black s-5">
               check</mat-icon>Check All
           </button>
-          <button fxLayout="row" mat-button class="check_uncheck_btn v-line mx-3" >
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
             <mat-icon class="text-black s-5">
               clear</mat-icon>UnCheck All
           </button>
@@ -82,7 +82,7 @@
 
     <div class="col-12 col-md-6 col-lg-4 ">
       <label class="fw-bold pb-3">Select Designation <span class="text-danger">*</span></label>
-      <mat-select [formControl]="designationlists" class="select_user_role_permission_filter" multiple placeholder="Select">
+      <mat-select  [formControl]="designationlists" class="select_user_role_permission_filter" multiple placeholder="Select">
         <mat-select-trigger>
           {{designationlists.value ? designationlists.value[0] : ''}}
           <span *ngIf="designationlists.value?.length > 1" class="example-additional-selection">
@@ -91,11 +91,11 @@
         </mat-select-trigger>
         <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
             <input class="form-control select_search_box" placeholder="Enter Keywords">
-          <button fxLayout="row" mat-button class="check_uncheck_btn mx-2" >
+          <button fxLayout="row" mat-button class="check_uncheck_btn" >
             <mat-icon class="text-black s-5">
               check</mat-icon>Check All
           </button>
-          <button fxLayout="row" mat-button class="check_uncheck_btn v-line mx-2" >
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
             <mat-icon class="text-black s-5">
               clear</mat-icon>UnCheck All
           </button>
@@ -124,37 +124,38 @@
            (+{{transactionlists.value.length - 1}} {{transactionlists.value?.length === 2 ? 'other' : 'others'}})
           </span>
         </mat-select-trigger>
-        <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3" fxLayoutAlign="space-between">
+        <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
             <input class="form-control select_search_box" placeholder="Enter Keywords">
-          <button fxLayout="row" mat-button class="check_uncheck_btn mx-2" >
+          <button fxLayout="row" mat-button class="check_uncheck_btn" >
             <mat-icon class="text-black s-5">
               check</mat-icon>Check All
           </button>
-          <button fxLayout="row" mat-button class="check_uncheck_btn v-line mx-2" >
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
             <mat-icon class="text-black s-5">
               clear</mat-icon>UnCheck All
           </button>
         </div>
         <mat-option *ngFor="let transaction of transactions" [value]="transaction">{{transaction}}</mat-option>
       </mat-select>
+     
     </div>
 
     <div class="col-12 col-md-6 col-lg-4 ">
-      <label class="fw-bold pb-3">Select Role Permission</label>
-      <mat-select [formControl]="rolepermissionlists" panelClass="optionGroup"  class="select_user_role_permission_filter" multiple placeholder="Select">
+      <label class="fw-bold pb-3">Select Role Permission<span class="text-danger">*</span> </label>
+      <mat-select [formControl]="rolepermissionlists" class="select_user_role_permission_filter" multiple disableOptionCentering panelClass="myPanelClass" multiple placeholder="Select">
         <mat-select-trigger>
           {{rolepermissionlists.value ? rolepermissionlists.value[0] : ''}}
           <span *ngIf="rolepermissionlists.value?.length > 1" class="example-additional-selection">
            (+{{rolepermissionlists.value.length - 1}} {{rolepermissionlists.value?.length === 2 ? 'other' : 'others'}})
           </span>
         </mat-select-trigger>
-        <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3" fxLayoutAlign="space-between">
+        <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
             <input class="form-control select_search_box" placeholder="Enter Keywords">
-          <button fxLayout="row" mat-button class="check_uncheck_btn mx-2" >
+          <button fxLayout="row" mat-button class="check_uncheck_btn" >
             <mat-icon class="text-black s-5">
               check</mat-icon>Check All
           </button>
-          <button fxLayout="row" mat-button class="check_uncheck_btn v-line mx-2" >
+          <button fxLayout="row" mat-button class="check_uncheck_btn v-line" >
             <mat-icon class="text-black s-5">
               clear</mat-icon>UnCheck All
           </button>
@@ -188,8 +189,8 @@
 
   </div>
   <mat-toolbar class="mat-toolbar mat-toolbar-single-row d-flex justify-content-center align-items-center">
-    <button mat-raised-button  color="warn" [routerLink]="'../../user-role-permission'">Cancel</button>
-    <button mat-raised-button class="pl-5" color="success">Save</button>
+    <button class="cancel" [routerLink]="'../../user-role-permission'">Cancel</button>
+    <button class="save" >Save</button>
   </mat-toolbar>
 </div>
 

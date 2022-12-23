@@ -4,7 +4,7 @@
   <div class="row p-2">
 
     <div class="col-12 col-md-6 col-lg-4 ">
-      <label class="fw-bold pb-3">Upload Profile Image </label>
+      <label class="fw-bold pb-2">Upload Profile Image </label>
       <div>
         <input (change)="onSelectFile($event)" id="file" accept=".jpg" class="input userRolePermissionFormField" type="file" placeholder="Upload Profile Image">
         <mat-icon matSuffix class="upload">
@@ -17,13 +17,13 @@
     </div>
     <div class="col-12 col-md-6 col-lg-4">
       <h5>User Name <span class="text-danger">*</span> </h5>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline"  class="useraddInput">
         <input matInput placeholder="Enter User Name" value="username001">
       </mat-form-field>
     </div>
     <div class="col-12 col-md-6 col-lg-4">
       <h5>Password <span class="text-danger">*</span> </h5>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline"  class="useraddInput">
         <input type="password" matInput placeholder="Enter Password" value="username001">
       </mat-form-field>
     </div>
@@ -116,7 +116,7 @@
     </div>
 
     <div class="col-12 col-md-6 col-lg-4 ">
-      <label class="fw-bold pb-3">Select Designation <span class="text-danger">*</span></label>
+      <label class="fw-bold pb-3">Select Transaction <span class="text-danger">*</span></label>
       <mat-select [formControl]="transactionlists"  class="select_user_role_permission_filter" multiple placeholder="Select">
         <mat-select-trigger>
           {{transactionlists.value ? transactionlists.value[0] : ''}}
@@ -137,11 +137,18 @@
         </div>
         <mat-option *ngFor="let transaction of transactions" [value]="transaction">{{transaction}}</mat-option>
       </mat-select>
+     
     </div>
 
     <div class="col-12 col-md-6 col-lg-4 ">
-      <label class="fw-bold pb-3">Select Role Permission</label>
-      <mat-select class="select_user_role_permission_filter" multiple placeholder="Select">
+      <label class="fw-bold pb-3">Select Role Permission<span class="text-danger">*</span> </label>
+      <mat-select [formControl]="rolepermissionlists" class="select_user_role_permission_filter" multiple disableOptionCentering panelClass="myPanelClass" multiple placeholder="Select">
+        <mat-select-trigger>
+          {{rolepermissionlists.value ? rolepermissionlists.value[0] : ''}}
+          <span *ngIf="rolepermissionlists.value?.length > 1" class="example-additional-selection">
+           (+{{rolepermissionlists.value.length - 1}} {{rolepermissionlists.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+        </mat-select-trigger>
         <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header pt-3">
             <input class="form-control select_search_box" placeholder="Enter Keywords">
           <button fxLayout="row" mat-button class="check_uncheck_btn" >
@@ -167,30 +174,23 @@
 
     <div class="col-12 col-md-6 col-lg-4 ">
       <h5>Description</h5>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline"  class="useraddInput">
         <input matInput placeholder="Enter Description" value="Aye Aye">
       </mat-form-field>
     </div>
 
     <div class="col-12 col-md-6 col-lg-4 ">
       <h5>Mobile Number <span class="text-danger">*</span> </h5>
-      <mat-form-field appearance="outline" class="mobileNo">
+      <mat-form-field appearance="outline"  class="mobileNo useraddInput">
         <span matPrefix>+95 &nbsp;</span>
         <input matInput placeholder="09XXXXXXXXX" value="09421056929">
       </mat-form-field>
     </div>
 
   </div>
-  <div class="row p-2">
-    <div class="d-flex">
-      <mat-checkbox [checked]= "myModel" class = "example-margin" >
-      </mat-checkbox>
-      <p class="ps-2">Is Active</p>
-    </div>
-  </div>
   <mat-toolbar class="mat-toolbar mat-toolbar-single-row d-flex justify-content-center align-items-center">
-    <button mat-raised-button  color="warn" [routerLink]="'../../user-role-permission'">Cancel</button>
-    <button mat-raised-button class="pl-5" color="success">Save</button>
+    <button class="cancel"  [routerLink]="'../../user-role-permission'">Cancel</button>
+    <button class="update" >Update</button>
   </mat-toolbar>
 </div>
 

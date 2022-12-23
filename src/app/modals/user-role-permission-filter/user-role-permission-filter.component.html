@@ -21,7 +21,7 @@
 
         <div class="col-12 col-md-12 col-lg-6">
           <label class="fw-bold pb-2">Select User Name</label>
-          <mat-select class="select_user_role_permission_filter" multiple placeholder="Select">
+          <mat-select class="select_user_role_permission_filter"  multiple placeholder="Select">
             <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign.xs="start start" class="filter_select_header">
                 <mat-form-field class="select_search_box" appearance="standard">
                   <input matInput placeholder="Enter Keywords">
@@ -213,11 +213,13 @@
 
         </div>
 
-      <div class="button_group pt-5 d-flex justify-content-center align-items-center">
-        <button  mat-raised-button color="warn" class="cancel" aria-hidden="true" (click)="onDismiss()">CLEAR</button>
-        <button  mat-raised-button color="success" class="save"> APPLY</button>
-      </div>
+   
     </div>
   </mat-dialog-content>
+  <div class="button_group pt-3 d-flex justify-content-center align-items-center mb-2">
+    <button class="cancel"  aria-hidden="true" (click)="onDismiss()">Clear</button>
+    <button class="update" >Apply</button>
+   
+  </div>
 </div>
 

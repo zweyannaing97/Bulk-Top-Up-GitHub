@@ -4,8 +4,8 @@
       <h3 class="routerLink" [routerLink]="'../transaction-detail'">Transaction Detail By Date
       </h3><h4>/</h4><h4>Bulk Top Up By Date</h4>
     </div>
-    <img src="assets/icons/excel%20download%20.svg" alt="" class="crud-btns" matTooltip="Download"
-         aria-label="Button that displays a tooltip when focused or hovered over">
+    <img src="assets/icons/excel.svg" alt="" class="crud-btns  pe-2" matTooltip="Excel Download"
+    aria-label="Button that displays a tooltip when focused or hovered over">
   </div>
   <div class="row p-2">
     <div class="table-pagination">
@@ -138,12 +138,6 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     </div>
-    <mat-toolbar>
-      <mat-paginator class="mat-paginator-companyName" [pageSizeOptions]="[20, 25, 50, 100]"
-                     showFirstLastButtons
-                     aria-label="Select page of periodic elements">
-      </mat-paginator>
-    </mat-toolbar>
   </div>
   <div class="row p-2">
     <div class="table-pagination1">
@@ -228,7 +222,7 @@
       </table>
     </div>
     <mat-toolbar>
-      <mat-paginator class="mat-paginator-companyName" [pageSizeOptions]="[20, 25, 50, 100]"
+      <mat-paginator class="mat-paginator-companyName" [pageSizeOptions]="[10 , 20, 25, 50, 100]"
                      showFirstLastButtons
                      aria-label="Select page of periodic elements">
       </mat-paginator>

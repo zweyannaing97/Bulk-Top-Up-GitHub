@@ -7,7 +7,7 @@
       </div>
       <img src="assets/icons/Filter.svg" alt="" class="crud-btns pe-2" matTooltip="Filter"
            aria-label="Button that displays a tooltip when focused or hovered over" (click)="openDialog()">
-      <img src="assets/icons/excel%20download%20.svg" alt="" class="crud-btns pe-2" matTooltip="Download"
+           <img src="assets/icons/excel.svg" alt="" class="crud-btns  pe-2" matTooltip="Excel Download"
            aria-label="Button that displays a tooltip when focused or hovered over">
       <img src="assets/icons/Add%20pattern.svg" alt="" class="crud-btns pe-2" matTooltip="Create New"
            aria-label="Button that displays a tooltip when focused or hovered over" [routerLink]="'../create-bulk-top-up'">
@@ -85,7 +85,7 @@
   </div>
 
   <mat-toolbar>
-    <mat-paginator class="mat-paginator-user-role-permission" [pageSizeOptions]="[20, 25, 50, 100]"
+    <mat-paginator class="mat-paginator-user-role-permission" [pageSizeOptions]="[10, 20, 25, 50, 100]"
                    showFirstLastButtons
                    aria-label="Select page of periodic elements">
     </mat-paginator>

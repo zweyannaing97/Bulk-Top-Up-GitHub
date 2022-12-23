@@ -33,18 +33,12 @@
             <mat-option *ngFor="let serviceType of serviceTypes" [value]="serviceType">{{serviceType}}</mat-option>
           </mat-select>
         </div>
-        <div class="row p-2">
-          <div class="d-flex">
-            <mat-checkbox [checked]= "myModel" class = "example-margin" >
-            </mat-checkbox>
-            <p class="ps-2">Is Active</p>
-          </div>
-        </div>
+       
       </div>
 
       <div class="button_group p-3 d-flex justify-content-center align-items-center">
-        <button  mat-raised-button color="warn" class="cancel" aria-hidden="true" (click)="onDismiss()">RESET</button>
-        <button  mat-raised-button color="primary" class="save"> APPLY</button>
+        <button class="cancel" aria-hidden="true" (click)="onDismiss()">Cancel</button>
+        <button class="save" >Save</button>
       </div>
     </div>
   </mat-dialog-content>

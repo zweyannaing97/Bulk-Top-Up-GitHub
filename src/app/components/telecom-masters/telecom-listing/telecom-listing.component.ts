@@ -53,11 +53,11 @@ export interface PeriodicElement {
 
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {numberId:'1',companyName: 'Airtel',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {numberId:'1',companyName: 'Airtel',  isActive:'No',  action:'assets/icons/Edit.svg'},
 
-  {numberId:'2',companyName: 'Mec Tel',  isActive:'No', action:'assets/icons/Edit.svg'},
+  {numberId:'2',companyName: 'Mec Tel',  isActive:'Yes', action:'assets/icons/Edit.svg'},
 
-  {numberId:'3',companyName: 'MPT',  isActive:'No',  action:'assets/icons/Edit.svg'},
+  {numberId:'3',companyName: 'MPT',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
 
   {numberId:'4',companyName: 'Mytel',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
 ];
@@ -70,17 +70,13 @@ export interface PeriodicElement1 {
 
 }
 const ELEMENT_DATA1: PeriodicElement1[] = [
-  {numberId:'1',companyName: 'Airtel',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
 
-  {numberId:'2',companyName: 'Mec Tel',  isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {numberId:'1',companyName: 'Mec Tel',  isActive:'Yes', action:'assets/icons/Edit.svg'},
 
-  {numberId:'3',companyName: 'MPT',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {numberId:'2',companyName: 'MPT',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
 
-  {numberId:'4',companyName: 'Mytel',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {numberId:'3',companyName: 'Mytel',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
 
-  {numberId:'5',companyName: 'MPT',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
-
-  {numberId:'6',companyName: 'Mytel',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
 ];
 
 export interface PeriodicElement2 {

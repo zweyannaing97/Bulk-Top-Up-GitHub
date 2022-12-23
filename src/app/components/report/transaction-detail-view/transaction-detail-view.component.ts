@@ -33,7 +33,7 @@ export class TransactionDetailViewComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+    this.dataSource1.paginator = this.paginator;
   }
 }
 export interface PeriodicElement {

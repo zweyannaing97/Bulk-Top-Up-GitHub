@@ -160,12 +160,11 @@
         </div>
 
       </div>
-
-      <div class="button_group pt-5 d-flex justify-content-center align-items-center">
-        <button  mat-raised-button color="warn" class="cancel" aria-hidden="true" (click)="onDismiss()">RESET</button>
-        <button  mat-raised-button color="primary" class="save"> APPLY</button>
-      </div>
     </div>
   </mat-dialog-content>
+  <div class="button_group pt-3 mb-3 d-flex justify-content-center align-items-center">
+    <button class="cancel"  aria-hidden="true" (click)="onDismiss()">Clear</button>
+    <button class="update" >Apply</button>
+  </div>
 </div>
 

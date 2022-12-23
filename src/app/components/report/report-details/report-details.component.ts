@@ -42,9 +42,11 @@ export class ReportDetailsComponent implements OnInit {
     {value:'Data Plan Recharge Mobile Number', viewValue: 'Data Plan Recharge Mobile Number'},
     {value:'Special Offer Recharge Mobile Number', viewValue: 'Special Offer Recharge Mobile Number'},
   ];
+  
   displayedColumns: string[] = ['no', 'telecomName', 'fileName', 'bulkReferenceNo','status',
     'totalTopUp','fail','success','totalRequest','failPrice','successPrice','denomanationAmt',
     'transactionAmt','mobileCount','refundStatus','dateTime','view'];
+
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
