@@ -60,6 +60,16 @@
         <td mat-cell *matCellDef="let element" [ngClass]="element.isActive === 'Yes' ? 'isGreen' : 'isRed'"> {{element.isActive}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="createDateTime">
+        <th mat-header-cell *matHeaderCellDef> Create Date & Time </th>
+        <td mat-cell *matCellDef="let element" style="width: 30%;"> {{element.createDateTime}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="updateDateTime">
+        <th mat-header-cell *matHeaderCellDef> Update Date & Time </th>
+        <td mat-cell *matCellDef="let element" style="width: 30%;"> {{element.updateDateTime}} </td>
+      </ng-container>
+
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element">
@@ -109,7 +119,15 @@
         <td mat-cell *matCellDef="let element"  [ngClass]="element.isActive === 'Yes' ? 'isGreen' : 'isRed'"> {{element.isActive}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="createDateTime">
+        <th mat-header-cell *matHeaderCellDef> Create Date & Time </th>
+        <td mat-cell *matCellDef="let element" style="width: 30%;"> {{element.createDateTime}} </td>
+      </ng-container>
 
+      <ng-container matColumnDef="updateDateTime">
+        <th mat-header-cell *matHeaderCellDef> Update Date & Time </th>
+        <td mat-cell *matCellDef="let element" style="width: 30%;"> {{element.updateDateTime}} </td>
+      </ng-container>
 
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
@@ -152,6 +170,16 @@
       <ng-container matColumnDef="isActive">
         <th mat-header-cell *matHeaderCellDef> Is Active </th>
         <td mat-cell *matCellDef="let element" [ngClass]="element.isActive === 'Yes' ? 'isGreen' : 'isRed'"> {{element.isActive}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="createDateTime">
+        <th mat-header-cell *matHeaderCellDef> Create Date & Time </th>
+        <td mat-cell *matCellDef="let element" style="width: 30%;"> {{element.createDateTime}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="updateDateTime">
+        <th mat-header-cell *matHeaderCellDef> Update Date & Time </th>
+        <td mat-cell *matCellDef="let element" style="width: 30%;"> {{element.updateDateTime}} </td>
       </ng-container>
 
       <ng-container matColumnDef="action">

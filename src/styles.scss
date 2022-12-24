@@ -521,9 +521,9 @@ mat-form-field {
 }
 // DASHBOARD Css//
 
-// .mat-drawer-content{
-//   overflow: hidden !important;
-// }
+.mat-drawer-content{
+  overflow-x: hidden !important;
+}
 .profile-box{
   overflow: hidden !important;
   text-align: center;
@@ -1110,4 +1110,8 @@ bs-daterangepicker-container{
 
 .isRed{
   color: #b81703;
+}
+
+.main-content{
+  height: calc(90vh - 120px);
 }

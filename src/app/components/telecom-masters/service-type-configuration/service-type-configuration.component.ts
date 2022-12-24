@@ -56,7 +56,7 @@ export class ServiceTypeConfigurationComponent implements OnInit {
     { value:'Is Active',viewValue: 'Is Active'},
   ];
 
-  displayedColumns: string[] = ['numberId','telecomServiceName','telecomServiceType', 'isActive', 'action'];
+  displayedColumns: string[] = ['numberId','telecomServiceName','telecomServiceType', 'isActive', 'createDateTime','updateDateTime','action'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   dataSource1 = new MatTableDataSource<PeriodicElement1>(ELEMENT_DATA1);
   dataSource2 = new MatTableDataSource<PeriodicElement2>(ELEMENT_DATA2);
@@ -77,17 +77,19 @@ export interface PeriodicElement {
   telecomServiceName: string;
   telecomServiceType: string;
   isActive: string;
+  createDateTime: string;
+  updateDateTime: string;
   action: string;
 
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {numberId:'1',telecomServiceName: 'Ooredoo',telecomServiceType:'Fb Pack',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {numberId:'1',telecomServiceName: 'Ooredoo',telecomServiceType:'Fb Pack',  isActive:'Yes', createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,  action:'assets/icons/Edit.svg'},
 
-  {numberId:'2',telecomServiceName: 'Mec Tel',telecomServiceType:'Special Offer',  isActive:'No', action:'assets/icons/Edit.svg'},
+  {numberId:'2',telecomServiceName: 'Mec Tel',telecomServiceType:'Special Offer',  isActive:'No',createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,  action:'assets/icons/Edit.svg'},
 
-  {numberId:'3',telecomServiceName: 'MPT',telecomServiceType:'Top Up',  isActive:'No',  action:'assets/icons/Edit.svg'},
+  {numberId:'3',telecomServiceName: 'MPT',telecomServiceType:'Top Up',  isActive:'No',createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,   action:'assets/icons/Edit.svg'},
 
-  {numberId:'4',telecomServiceName: 'Mytel',telecomServiceType:'Special Offer',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {numberId:'4',telecomServiceName: 'Mytel',telecomServiceType:'Special Offer',  isActive:'Yes', createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,  action:'assets/icons/Edit.svg'},
 ];
 
 export interface PeriodicElement1 {
@@ -95,13 +97,15 @@ export interface PeriodicElement1 {
   telecomServiceName: string;
   telecomServiceType: string;
   isActive: string;
+  createDateTime: string;
+  updateDateTime: string;
   action: string;
 
 }
 const ELEMENT_DATA1: PeriodicElement1[] = [
-  {numberId:'1',telecomServiceName: 'Ooredoo',telecomServiceType:'Fb Pack',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {numberId:'1',telecomServiceName: 'Ooredoo',telecomServiceType:'Fb Pack',  isActive:'Yes', createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,  action:'assets/icons/Edit.svg'},
 
-  {numberId:'2',telecomServiceName: 'Mytel',telecomServiceType:'Special Offer',  isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {numberId:'2',telecomServiceName: 'Mytel',telecomServiceType:'Special Offer',  isActive:'Yes', createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,  action:'assets/icons/Edit.svg'},
 
 
 ];
@@ -112,12 +116,14 @@ export interface PeriodicElement2 {
   telecomServiceName: string;
   telecomServiceType: string;
   isActive: string;
+  createDateTime: string;
+  updateDateTime: string;
   action: string;
 
 }
 const ELEMENT_DATA2: PeriodicElement2[] = [
-  {numberId:'1',telecomServiceName: 'Mec Tel',telecomServiceType:'Special Offer',  isActive:'No', action:'assets/icons/Edit.svg'},
+  {numberId:'1',telecomServiceName: 'Mec Tel',telecomServiceType:'Special Offer',  isActive:'No', createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {numberId:'2',telecomServiceName: 'MPT',telecomServiceType:'Top Up',  isActive:'No',  action:'assets/icons/Edit.svg'},
+  {numberId:'2',telecomServiceName: 'MPT',telecomServiceType:'Top Up',  isActive:'No',createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,   action:'assets/icons/Edit.svg'},
 
 ];

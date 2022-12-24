@@ -37,12 +37,7 @@
       </div>
     </div>
   </div>
-
-
-
-
+  <mat-toolbar class="mat-toolbar mat-toolbar-single-row d-flex justify-content-center align-items-center">
+    <button *ngIf="selectedCar"  class="save" [routerLink]="'../create-multiple-success-error'">Submit</button>
+  </mat-toolbar>
 </div>
-
-<mat-toolbar class="mat-toolbar mat-toolbar-single-row d-flex justify-content-center align-items-center">
-  <button *ngIf="selectedCar" mat-raised-button class="pl-5" color="success" [routerLink]="'../create-multiple-success-error'">Submit</button>
-</mat-toolbar>

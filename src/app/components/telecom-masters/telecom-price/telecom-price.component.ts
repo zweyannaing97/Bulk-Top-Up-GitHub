@@ -51,7 +51,7 @@ export class TelecomPriceComponent implements OnInit {
   displayedColumns: string[] = ['numberId','telecomServiceName','telecomServiceType','amount','remarks','descriptionOne','descriptionTwo', 'isActive'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   dataSource1 = new MatTableDataSource<PeriodicElement1>(ELEMENT_DATA1);
-
+  dataSource2 = new MatTableDataSource<PeriodicElement2>(ELEMENT_DATA2);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -93,5 +93,25 @@ export interface PeriodicElement1 {
 
 }
 const ELEMENT_DATA1: PeriodicElement1[] = [
-  {numberId:'1',telecomServiceName: 'Ooredoo',telecomServiceType:'Fb Pack',  isActive:'No',amount:'5000',remarks:'-',descriptionOne:'Top up',descriptionTwo:'-'},
+  {numberId:'1',telecomServiceName: 'Ooredoo',telecomServiceType:'Fb Pack',  isActive:'Yes',amount:'5000',remarks:'-',descriptionOne:'Top up',descriptionTwo:'-'},
+  {numberId:'2',telecomServiceName: 'Mytel',telecomServiceType:'Special Offer',  isActive:'Yes',amount:'5000',remarks:'-',descriptionOne:'Top up',descriptionTwo:'-'},
+
+];
+
+export interface PeriodicElement2 {
+  numberId:string;
+  telecomServiceName: string;
+  telecomServiceType: string;
+  isActive: string;
+  amount:string;
+  remarks:string;
+  descriptionOne:string;
+  descriptionTwo:string;
+
+}
+const ELEMENT_DATA2: PeriodicElement2[] = [
+  {numberId:'1',telecomServiceName: 'Mec Tel',telecomServiceType:'Special Offer',  isActive:'No',amount:'5000',remarks:'-',descriptionOne:'Top up',descriptionTwo:'-'},
+
+  {numberId:'2',telecomServiceName: 'MPT',telecomServiceType:'Top Up',  isActive:'No',amount:'5000',remarks:'-',descriptionOne:'Top up',descriptionTwo:'-'},
+
 ];

@@ -15,7 +15,7 @@ export class CompanyListingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  displayedColumns: string[] = ['companyName', 'remark', 'isActive', 'action'];
+  displayedColumns: string[] = ['companyName', 'remark', 'isActive','createDateTime','updateDateTime', 'action'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -29,57 +29,59 @@ export interface PeriodicElement {
 
   remark: string;
   isActive: string;
+  createDateTime: string;
+  updateDateTime: string;
   action: string;
 
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Account Department', isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Account Department', isActive:'Yes', createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Admin Department', isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Admin Department', isActive:'Yes',  createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',  createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'No',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'No',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Account Department', isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Account Department', isActive:'Yes',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Admin Department', isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Admin Department', isActive:'Yes',  createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',  createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'No',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'No',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Account Department', isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Account Department', isActive:'Yes',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Admin Department', isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Admin Department', isActive:'Yes',  createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',  createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'No',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'No',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Account Department', isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Account Department', isActive:'Yes',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Admin Department', isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Admin Department', isActive:'Yes',  createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',  createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'No',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'No',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' , action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Account Department', isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Account Department', isActive:'Yes',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Admin Department', isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Admin Department', isActive:'Yes',  createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes', action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'Yes',  createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,action:'assets/icons/Edit.svg'},
 
-  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'No',  action:'assets/icons/Edit.svg'},
+  {companyName: 'Consumer Goods Myanmar Limited', remark: 'Sales Department', isActive:'No',   createDateTime: 'Mon, 08-Jan-2021 09:10:20',updateDateTime: 'Mon, 08-Jan-2021 09:10:20' ,action:'assets/icons/Edit.svg'},
 ];
