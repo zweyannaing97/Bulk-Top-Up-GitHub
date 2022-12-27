@@ -5,6 +5,10 @@ import { SimpleLayoutComponent } from './shared/layout/simple-layout/simple-layo
 const routes: Routes = [
 
   {
+    path: '', redirectTo:'/dashboard', pathMatch:'full'
+  },
+
+  {
     path: 'auth',
     loadChildren: () => import('./components/auth/auth.module').then(m => m.AuthModule)
   },
@@ -13,7 +17,7 @@ const routes: Routes = [
     component: SimpleLayoutComponent,
     children: [{
       path: 'dashboard',
-      loadChildren: () => import('./components/dashboard/dashboard.module').then(m => m.DashboardModule)
+      loadChildren: () => import('./components/dashboard-new/dashboard-new.module').then(m => m.DashboardNewModule)
     },
     {
       path: 'profile',

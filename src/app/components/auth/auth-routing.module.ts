@@ -7,6 +7,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { ResendOtpComponent } from './resend-otp/resend-otp.component';
 import { EnterOtpComponent } from "./enter-otp/enter-otp.component";
 import { RequestOtpComponent } from "./request-otp/request-otp.component";
+import { OtpRequestComponent } from './otp-request/otp-request.component';
 
 const routes: Routes = [{
   path: '',
@@ -38,6 +39,11 @@ const routes: Routes = [{
     {
       path: 'request-otp',
       component: RequestOtpComponent
+    },
+
+    {
+      path: 'otp-request',
+      component:OtpRequestComponent 
     },
   ]
 }];

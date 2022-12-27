@@ -23,9 +23,12 @@
 
   <div>
     <div class="d-flex justify-content-between align-items-center" style="text-align: center;margin-top: 10px;" >
-      <button  mat-raised-button color="primary" type="submit" (click)="otpSubmit()" *ngIf="!isTimeUp" class="submit" [routerLink]="'../reset-password'">SUBMIT</button>
-      <button  mat-raised-button color="primary" type="submit" (click)="resentOtp()" *ngIf="isTimeUp" class="submit" [routerLink]="'../request-otp'">RESEND OTP</button>
-      <button mat-raised-button color="warn" (click)="otpCancel()" [routerLink]="'../forgot-password'">Cancel</button>
+      <button class="login_btn2"  type="submit" (click)="otpSubmit()" *ngIf="!isTimeUp" [routerLink]="'../reset-password'">SUBMIT</button>
+      <!-- <button  mat-raised-button color="primary" type="submit" (click)="otpSubmit()" *ngIf="!isTimeUp" class="submit" [routerLink]="'../reset-password'">SUBMIT</button> -->
+      <button class="login_btn2" type="submit" (click)="resentOtp()" *ngIf="isTimeUp" [routerLink]="'../request-otp'">RESEND OTP</button>
+      <!-- <button  mat-raised-button color="primary" type="submit" (click)="resentOtp()" *ngIf="isTimeUp" class="submit" [routerLink]="'../request-otp'">RESEND OTP</button> -->
+      <button class="login_btn1" (click)="otpCancel()" [routerLink]="'../forgot-password'">CANCEL </button>
+      <!-- <button mat-raised-button color="warn" (click)="otpCancel()" [routerLink]="'../forgot-password'">Cancel</button> -->
     </div>
   </div>
 <!--  <div style="text-align: center;margin-top: 20px;" >-->

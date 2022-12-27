@@ -8,8 +8,8 @@ import { UserTypeConstant } from 'src/app/core/constants/userType.constants';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  emailFormControl = new FormControl('admin', [Validators.required]);
-  emailFormControl1 = new FormControl('123', [Validators.required]);
+  emailFormControl = new FormControl('', [Validators.required]);
+  emailFormControl1 = new FormControl('', [Validators.required]);
 
   hide = true;
 

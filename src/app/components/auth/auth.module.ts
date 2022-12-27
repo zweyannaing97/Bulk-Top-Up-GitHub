@@ -11,8 +11,9 @@ import { ResendOtpComponent } from './resend-otp/resend-otp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EnterOtpComponent } from './enter-otp/enter-otp.component';
 import { RequestOtpComponent } from './request-otp/request-otp.component';
+import { OtpRequestComponent } from './otp-request/otp-request.component';
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, ResetPasswordComponent, ResendOtpComponent, EnterOtpComponent, RequestOtpComponent, ],
+  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, ResetPasswordComponent, ResendOtpComponent, EnterOtpComponent, RequestOtpComponent, OtpRequestComponent, ],
   imports: [
     CommonModule,
     DemoMaterialModule,

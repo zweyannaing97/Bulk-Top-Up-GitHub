@@ -10,18 +10,18 @@
           <div class="login-wrapper">
             <div>
               <mat-form-field appearance="outline">
-                <mat-label>Enter User Name</mat-label>
+                <!-- <mat-label>Enter User Name</mat-label> -->
                 <mat-icon matPrefix class="text-black field-icon">account_box</mat-icon>
-                <input [formControl]="emailFormControl" matInput placeholder="" >
+                <input [formControl]="emailFormControl" matInput placeholder="Enter User Name" >
                 <mat-error *ngIf="emailFormControl.hasError('required')">
                   Username is <strong>required</strong>
                 </mat-error>
               </mat-form-field>
 
               <mat-form-field appearance="outline">
-                <mat-label>Enter Password</mat-label>
+                <!-- <mat-label>Enter Password</mat-label> -->
                 <mat-icon matPrefix class="text-black field-icon">lock</mat-icon>
-                <input [formControl]="emailFormControl1" class="paddingBottom-2" matInput value="123" placeholder="" [type]="hide ? 'password' : 'text'">
+                <input [formControl]="emailFormControl1" class="paddingBottom-2" matInput value="123" placeholder="Enter Password" [type]="hide ? 'password' : 'text'">
                 <mat-error *ngIf="emailFormControl1.hasError('required')">
                   Password is <strong>required</strong>
                 </mat-error>
@@ -36,14 +36,12 @@
                 <div>
                   <mat-checkbox color="primary" class="mb-30">Remember Me</mat-checkbox>
                 </div>
-                <button mat-raised-button [disabled]="emailFormControl1.hasError('required') || emailFormControl.hasError('required')" color="primary" class="w-50 mx-auto" [routerLink]="'../../dashboard'">LogIn</button>
+                <button [disabled]="emailFormControl1.hasError('required') || emailFormControl.hasError('required')" class="login_btn"  [routerLink]="'../../dashboard'">LOGIN</button>
+                <!-- <button mat-raised-button [disabled]="emailFormControl1.hasError('required') || emailFormControl.hasError('required')" color="primary" class="w-50 mx-auto" [routerLink]="'../../dashboard'">LogIn</button> -->
               </div>
             </div>
           </div>
-          <footer class="d-flex justify-content-center align-items-center flex-column text-center text-white">
-            <span>V 1.26.3, Build (106) 09 June 2021</span>
-            <span>Copyright © 2022 Internet Wallet Myanmar Ltd.</span>
-          </footer>
+         
         </div>
       </div>
     </div>

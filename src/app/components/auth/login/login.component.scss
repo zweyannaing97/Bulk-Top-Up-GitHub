@@ -1,0 +1,18 @@
+.login_btn{
+    background-color:  #0c0f3a;
+    color: white;
+    font-size: 16px;
+    height: 50px;
+    margin: auto;
+    width: 190px;
+    border-radius: 200px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    border: 2px solid #fff;
+  
+}
+
+::ng-deep .mat-form-field-outline{
+    border-color: #000 !important;
+}

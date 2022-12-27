@@ -1115,3 +1115,8 @@ bs-daterangepicker-container{
 .main-content{
   height: calc(90vh - 120px);
 }
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: red!important;
+  // opacity: 1!important;
+}
