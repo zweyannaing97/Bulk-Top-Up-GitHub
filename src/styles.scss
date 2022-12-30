@@ -1120,3 +1120,54 @@ bs-daterangepicker-container{
   color: red!important;
   // opacity: 1!important;
 }
+
+.responsive-chart{
+  display: flex;
+    width: 100%;
+    height: 100%;
+}
+.dashcard{
+  border-radius: 1rem;
+  margin: 5px 10px;
+}
+
+.dayTextBg{
+  background-color: #ebebeb;
+  border-radius: 40px;
+  height: 30px;
+  min-width: 74px;
+
+  font-size: 12px !important;
+}
+
+.dayText{
+  font-size: 12px;
+  margin: 0;
+  font-weight: 600;
+  margin-top: 5px !important;
+}
+
+.MPT_bgColor{
+  background-color: #f5b80f;
+  color: #fff;
+}
+
+.Telenor_bgColor{
+  background-color: #1529a6;
+  color: #fff;
+}
+
+.Ooredoo_bgColor{
+  background-color: #ed1b24;
+  color: #fff;
+}
+
+.Mytel_bgColor{
+  background-color: #f0620e;
+  color: #fff;
+}
+
+.MEC_bgColor{
+  background-color: #3a7eed;
+  color: #fff;
+}
