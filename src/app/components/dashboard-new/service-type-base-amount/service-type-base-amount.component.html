@@ -9,7 +9,7 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <div class="card shadow dashcard">
+            <div class="card shadow dashcard" >
                 <div class="d-flex justify-content-between pt-3">
                     <div class="px-3">
                       <p class="sHeader">Service Type Base Amount Wise</p>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="col-md-6">
-            <div class="card shadow dashcard"> 
+            <div class="card shadow dashcard" [routerLink]="'../top-up-details'"> 
 
                 <div class="d-flex justify-content-between pt-3">
                     <div class="px-3">
@@ -66,8 +66,7 @@
                   ></apx-chart>
                 </div>            
             </div>
-
-            <div class="card shadow dashcard"> 
+            <div class="card shadow dashcard" [routerLink]="'../data-plan-details'"> 
 
                 <div class="d-flex justify-content-between pt-3">
                     <div class="px-3">
@@ -94,9 +93,7 @@
                   ></apx-chart>
                 </div>            
             </div>
-
-
-            <div class="card shadow dashcard"> 
+            <div class="card shadow dashcard"  [routerLink]="'../special-offer-details'"> 
 
                 <div class="d-flex justify-content-between pt-3">
                     <div class="px-3">
@@ -123,10 +120,6 @@
                   ></apx-chart>
                 </div>            
             </div>
-
-
-            
-
         </div>
     </div>
 </div>

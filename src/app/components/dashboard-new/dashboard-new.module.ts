@@ -10,6 +10,9 @@ import { OperatorBaseAmountComponent } from './operator-base-amount/operator-bas
 import { SingleTopUpDetailsComponent } from './single-top-up-details/single-top-up-details.component';
 import { MultipleTopUpDetailsComponent } from './multiple-top-up-details/multiple-top-up-details.component';
 import { BulkTopUpDetailsComponent } from './bulk-top-up-details/bulk-top-up-details.component';
+import { TopUpDetailsComponent } from './top-up-details/top-up-details.component';
+import { DataPlanDetailsComponent } from './data-plan-details/data-plan-details.component';
+import { SpecialOfferDetailsComponent } from './special-offer-details/special-offer-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { BulkTopUpDetailsComponent } from './bulk-top-up-details/bulk-top-up-det
     OperatorBaseAmountComponent,
     SingleTopUpDetailsComponent,
     MultipleTopUpDetailsComponent,
-    BulkTopUpDetailsComponent
+    BulkTopUpDetailsComponent,
+    TopUpDetailsComponent,
+    DataPlanDetailsComponent,
+    SpecialOfferDetailsComponent
   ],
   imports: [
     CommonModule,

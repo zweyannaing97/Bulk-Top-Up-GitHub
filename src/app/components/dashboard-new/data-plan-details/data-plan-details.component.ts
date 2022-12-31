@@ -32,13 +32,13 @@ export type topupBaseAmount = {
 };
 
 @Component({
-  selector: 'app-multiple-top-up-details',
-  templateUrl: './multiple-top-up-details.component.html',
-  styleUrls: ['./multiple-top-up-details.component.scss']
+  selector: 'app-data-plan-details',
+  templateUrl: './data-plan-details.component.html',
+  styleUrls: ['./data-plan-details.component.scss']
 })
-export class MultipleTopUpDetailsComponent implements OnInit {
+export class DataPlanDetailsComponent implements OnInit {
 
-  public multipleAmtBase:topupBaseAmount = {
+  public dataplanBase:topupBaseAmount = {
      
     series: [{
       data: [720, 600,700,500,300]

@@ -1,1 +1,46 @@
-<p>single-top-up-details works!</p>
+<div class="p-3">
+    
+    <div class="d-flex justify-content-between align-items-center pb-2">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb font-weight-bold " style="background: none;">
+              <li class="breadcrumb-item"><a href=""  [routerLink]="''"><h4>Process Total Base Amount Wise</h4></a></li>
+              <li class="breadcrumb-item" aria-current="page"><a href=""  [routerLink]="'../top-up-base'"><h4>Top Up Base Amount Wise</h4></a></li>
+              <li  class="breadcrumb-item"><h4>Single Top Up</h4></li>
+            </ol>
+          </nav>
+      
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow dashcard"> 
+
+                <div class="d-flex justify-content-between pt-3">
+                    <div class="px-3">
+                      <p class="sHeader">Single Top Up</p>
+                    </div>
+                    <div class="px-3 dayTextBg mx-2">
+                      <p class="dayText">30 days</p>
+                    </div>
+                </div>
+                <div id="singleBase" class="responsive-chart"> 
+                  <apx-chart
+                    [colors]="singleAmtBase.colors"
+                    [series]="singleAmtBase.series"
+                    [chart]="singleAmtBase.chart"
+                    [yaxis]="singleAmtBase.yaxis"
+                    [xaxis]="singleAmtBase.xaxis"
+                    [stroke]="singleAmtBase.stroke"
+                    [tooltip]="singleAmtBase.tooltip"
+                    [plotOptions]="singleAmtBase.plotOptions"
+                    
+                      style="
+                      width: 100%;
+                      height: 100%;"
+                  ></apx-chart>
+                </div>            
+            </div> 
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+</div>

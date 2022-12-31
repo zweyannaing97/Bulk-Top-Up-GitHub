@@ -1,0 +1,43 @@
+<div class="p-3">
+    
+    <div class="d-flex justify-content-between align-items-center pb-2">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb font-weight-bold " style="background: none;">
+              <li class="breadcrumb-item"><a href=""  [routerLink]="''"><h4>Process Total Base Amount Wise</h4></a></li>
+              <li class="breadcrumb-item" aria-current="page"><a href=""  [routerLink]="'../service-type-base'"><h4>Service Type Base Amount Wise</h4></a></li>
+              <li  class="breadcrumb-item"><h4>Special Offer</h4></li>
+            </ol>
+          </nav>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card shadow dashcard"  [routerLink]="'../special-offer-details'"> 
+
+          <div class="d-flex justify-content-between pt-3">
+              <div class="px-3">
+                <p class="sHeader">Special Offer</p>
+              </div>
+              <div class="px-3 dayTextBg mx-2">
+                <p class="dayText">30 days</p>
+              </div>
+          </div>
+          <div id="bulkBase" class="responsive-chart"> 
+            <apx-chart
+              [colors]="specialofferBase.colors"
+              [series]="specialofferBase.series"
+              [chart]="specialofferBase.chart"
+              [yaxis]="specialofferBase.yaxis"
+              [xaxis]="specialofferBase.xaxis"
+              [stroke]="specialofferBase.stroke"
+              [tooltip]="specialofferBase.tooltip"
+              [plotOptions]="specialofferBase.plotOptions"
+              
+                style="
+                width: 100%;
+                height: 100%;"
+            ></apx-chart>
+          </div>            
+      </div>
+      </div>
+    </div>
+</div>    

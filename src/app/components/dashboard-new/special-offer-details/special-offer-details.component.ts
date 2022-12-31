@@ -32,13 +32,13 @@ export type topupBaseAmount = {
 };
 
 @Component({
-  selector: 'app-multiple-top-up-details',
-  templateUrl: './multiple-top-up-details.component.html',
-  styleUrls: ['./multiple-top-up-details.component.scss']
+  selector: 'app-special-offer-details',
+  templateUrl: './special-offer-details.component.html',
+  styleUrls: ['./special-offer-details.component.scss']
 })
-export class MultipleTopUpDetailsComponent implements OnInit {
+export class SpecialOfferDetailsComponent implements OnInit {
 
-  public multipleAmtBase:topupBaseAmount = {
+  public specialofferBase:topupBaseAmount = {
      
     series: [{
       data: [720, 600,700,500,300]
@@ -98,7 +98,6 @@ export class MultipleTopUpDetailsComponent implements OnInit {
       }
     },
   };
-
   constructor() { }
 
   ngOnInit(): void {

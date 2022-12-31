@@ -30,15 +30,15 @@ export type topupBaseAmount = {
   tooltip: ApexTooltip;
   plotOptions: ApexPlotOptions;
 };
-
 @Component({
-  selector: 'app-multiple-top-up-details',
-  templateUrl: './multiple-top-up-details.component.html',
-  styleUrls: ['./multiple-top-up-details.component.scss']
+  selector: 'app-top-up-details',
+  templateUrl: './top-up-details.component.html',
+  styleUrls: ['./top-up-details.component.scss']
 })
-export class MultipleTopUpDetailsComponent implements OnInit {
+export class TopUpDetailsComponent implements OnInit {
 
-  public multipleAmtBase:topupBaseAmount = {
+
+  public topupBase:topupBaseAmount = {
      
     series: [{
       data: [720, 600,700,500,300]
@@ -98,7 +98,6 @@ export class MultipleTopUpDetailsComponent implements OnInit {
       }
     },
   };
-
   constructor() { }
 
   ngOnInit(): void {
