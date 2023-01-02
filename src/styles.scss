@@ -1171,3 +1171,12 @@ bs-daterangepicker-container{
   background-color: #3a7eed;
   color: #fff;
 }
+
+.dot{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  margin-right: 10px;
+}
