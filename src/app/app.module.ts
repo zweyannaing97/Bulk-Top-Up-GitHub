@@ -76,6 +76,7 @@ const MY_FORMATS = {
     ProfileComponent,
     ServiceTypeFilterComponent,
     TelecomPriceFilterComponent,
+  
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+
 
 import {
   ChartComponent,
@@ -19,6 +21,7 @@ import {
   ApexMarkers,
   ApexAnnotations,
 } from "ng-apexcharts";
+import { DashboardFilterComponent } from 'src/app/modals/dashboard-filter/dashboard-filter.component';
 
 export type ChartOptions2 = {
   series: ApexNonAxisChartSeries;
@@ -217,7 +220,14 @@ export class DashboardIndexComponent implements OnInit {
   };
 
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+  openDialog() {
+    this.dialog.open(DashboardFilterComponent, {
+      width: '900px',
+      data: {}
+    });
+  }
 
   ngOnInit(): void {
   }
