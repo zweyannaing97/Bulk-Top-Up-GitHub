@@ -45,7 +45,7 @@ export class DataPlanDetailsComponent implements OnInit {
     }],
       chart: {
       type: 'bar',
-      height: 200,
+      height: 400,
       zoom: {
         enabled: false
       },
