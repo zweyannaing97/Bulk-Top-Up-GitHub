@@ -5,6 +5,10 @@ import { DashboardIndexComponent } from './dashboard-index/dashboard-index.compo
 import { DataPlanDetailsComponent } from './data-plan-details/data-plan-details.component';
 import { MultipleTopUpDetailsComponent } from './multiple-top-up-details/multiple-top-up-details.component';
 import { OperatorBaseAmountComponent } from './operator-base-amount/operator-base-amount.component';
+import { OperatorBaseMecComponent } from './operator-base-mec/operator-base-mec.component';
+import { OperatorBaseMytelComponent } from './operator-base-mytel/operator-base-mytel.component';
+import { OperatorBaseOoredooComponent } from './operator-base-ooredoo/operator-base-ooredoo.component';
+import { OperatorBaseTelenorComponent } from './operator-base-telenor/operator-base-telenor.component';
 import { ServiceTypeBaseAmountComponent } from './service-type-base-amount/service-type-base-amount.component';
 import { SingleTopUpDetailsComponent } from './single-top-up-details/single-top-up-details.component';
 import { SpecialOfferDetailsComponent } from './special-offer-details/special-offer-details.component';
@@ -25,11 +29,6 @@ const routes: Routes = [
   {
     path:'service-type-base',
     component: ServiceTypeBaseAmountComponent
-  },
-
-  {
-    path:'operator-base',
-    component: OperatorBaseAmountComponent
   },
 
   {
@@ -61,11 +60,27 @@ const routes: Routes = [
     path:'special-offer-details',
     component: SpecialOfferDetailsComponent
   },
+  {
+    path:'operator-base-mpt',
+    component: OperatorBaseAmountComponent
+  },
 
-
-
-
-
+  {
+    path:'operator-base-telenor',
+    component: OperatorBaseTelenorComponent
+  },
+  {
+    path:'operator-base-ooredoo',
+    component: OperatorBaseOoredooComponent
+  },
+  {
+    path:'operator-base-mytel',
+    component: OperatorBaseMytelComponent
+  },
+  {
+    path:'operator-base-mec',
+    component: OperatorBaseMecComponent
+  },
 
 ];
 

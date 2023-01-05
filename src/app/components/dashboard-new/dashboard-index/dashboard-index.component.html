@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <div class="card shadow dashcard"  [routerLink]="'./operator-base'"> 
+            <div class="card shadow dashcard"  [routerLink]="'./operator-base-mpt'"> 
 
               <div class="d-flex justify-content-between pt-3">
                   <div class="px-3">
@@ -116,13 +116,12 @@
                       <p class="dayText">30 days</p>
                     </div>
                 </div>
-                <div id="serviceTypeAmt"> 
+                <div id="serviceTypeAmt" class="responsive-chart"> 
                     <apx-chart
                       [series]="serviceTypeAmtOptions.series"
                       [colors]="serviceTypeAmtOptions.colors"
                       [chart]="serviceTypeAmtOptions.chart"
                       [labels]="serviceTypeAmtOptions.labels"
-                      [responsive]="serviceTypeAmtOptions.responsive"
                       [dataLabels]="serviceTypeAmtOptions.dataLabels"
                       [legend]="serviceTypeAmtOptions.legend"
                       [plotOptions]="serviceTypeAmtOptions.plotOptions"

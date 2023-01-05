@@ -55,7 +55,7 @@ export class ServiceTypeBaseAmountComponent implements OnInit {
     series: [420000, 250000,120200],
       chart: {
         type: "pie",
-        height: 560 
+        height: 500 
       },
       labels: ["Top Up", "Data Plan","Special Offer"],
       responsive: [
@@ -63,7 +63,7 @@ export class ServiceTypeBaseAmountComponent implements OnInit {
           breakpoint: 480,
           options: {
             chart: {
-              width: 500,
+              height: 300,
             },
             legend: {
               position: "bottom"
@@ -100,7 +100,7 @@ export class ServiceTypeBaseAmountComponent implements OnInit {
     }],
       chart: {
       type: 'bar',
-      height: 200,
+      height: 170,
       zoom: {
         enabled: false
       },
@@ -110,8 +110,8 @@ export class ServiceTypeBaseAmountComponent implements OnInit {
     },
     plotOptions: {
       bar: {
-        columnWidth:'35%',
-        barHeight: '65%',
+        columnWidth:'30%',
+        barHeight: '60%',
         distributed: true,
         horizontal: false,
         dataLabels: {
@@ -161,7 +161,7 @@ export class ServiceTypeBaseAmountComponent implements OnInit {
     }],
       chart: {
       type: 'bar',
-      height: 200,
+      height: 170,
       zoom: {
         enabled: false
       },
@@ -171,8 +171,8 @@ export class ServiceTypeBaseAmountComponent implements OnInit {
     },
     plotOptions: {
       bar: {
-        columnWidth:'35%',
-        barHeight: '65%',
+        columnWidth:'30%',
+        barHeight: '60%',
         distributed: true,
         horizontal: false,
         dataLabels: {
@@ -222,7 +222,7 @@ export class ServiceTypeBaseAmountComponent implements OnInit {
     }],
       chart: {
       type: 'bar',
-      height: 200,
+      height: 170,
       zoom: {
         enabled: false
       },
@@ -232,8 +232,8 @@ export class ServiceTypeBaseAmountComponent implements OnInit {
     },
     plotOptions: {
       bar: {
-        columnWidth:'35%',
-        barHeight: '65%',
+        columnWidth:'30%',
+        barHeight: '60%',
         distributed: true,
         horizontal: false,
         dataLabels: {

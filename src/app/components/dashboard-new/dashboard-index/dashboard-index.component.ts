@@ -59,7 +59,7 @@ export class DashboardIndexComponent implements OnInit {
     }],
       chart: {
       type: 'bar',
-      height: 250,
+      height: 240,
       zoom: {
         enabled: false
       },
@@ -186,10 +186,10 @@ export class DashboardIndexComponent implements OnInit {
       labels: ["Top Up", "Data Plan","Special Offer"],
       responsive: [
         {
-          breakpoint: 480,
+          breakpoint: 380,
           options: {
             chart: {
-              width: 500,
+              width: 300,
             },
             legend: {
               position: "bottom"

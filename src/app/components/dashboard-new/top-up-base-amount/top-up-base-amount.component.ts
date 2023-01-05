@@ -119,7 +119,7 @@ export class TopUpBaseAmountComponent implements OnInit {
     }],
       chart: {
       type: 'bar',
-      height: 200,
+      height: 170,
       zoom: {
         enabled: false
       },
@@ -129,8 +129,8 @@ export class TopUpBaseAmountComponent implements OnInit {
     },
     plotOptions: {
       bar: {
-        columnWidth:'35%',
-        barHeight: '65%',
+        columnWidth:'30%',
+        barHeight: '60%',
         distributed: true,
         horizontal: false,
         dataLabels: {
@@ -180,7 +180,7 @@ export class TopUpBaseAmountComponent implements OnInit {
     }],
       chart: {
       type: 'bar',
-      height: 200,
+      height: 170,
       zoom: {
         enabled: false
       },
@@ -190,8 +190,8 @@ export class TopUpBaseAmountComponent implements OnInit {
     },
     plotOptions: {
       bar: {
-        columnWidth:'35%',
-        barHeight: '65%',
+        columnWidth:'30%',
+        barHeight: '60%',
         distributed: true,
         horizontal: false,
         dataLabels: {
@@ -241,7 +241,7 @@ export class TopUpBaseAmountComponent implements OnInit {
     }],
       chart: {
       type: 'bar',
-      height: 200,
+      height: 170,
       zoom: {
         enabled: false
       },
@@ -251,8 +251,8 @@ export class TopUpBaseAmountComponent implements OnInit {
     },
     plotOptions: {
       bar: {
-        columnWidth:'35%',
-        barHeight: '65%',
+        columnWidth:'30%',
+        barHeight: '60%',
         distributed: true,
         horizontal: false,
         dataLabels: {
