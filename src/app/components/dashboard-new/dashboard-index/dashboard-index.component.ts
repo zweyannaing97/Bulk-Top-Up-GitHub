@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
+import { Router } from '@angular/router';
 
 
 import {
@@ -51,22 +52,59 @@ export type operatorBaseAmount = {
   styleUrls: ['./dashboard-index.component.scss']
 })
 export class DashboardIndexComponent implements OnInit {
+  constructor(public dialog: MatDialog,private router: Router,private zone: NgZone) { }
+
+  handleClick(e: any, chart: any, opts: any){
+    if (opts.dataPointIndex === 0){
+      this.zone.run(() => {
+        this.router.navigate(['/dashboard/operator-base-mpt']);
+      });
+      
+    }else if (opts.dataPointIndex === 1){
+      this.zone.run(() => {
+        this.router.navigate(['/dashboard/operator-base-telenor']);
+      });
+
+    }else if (opts.dataPointIndex === 2){
+      this.zone.run(() => {
+        this.router.navigate(['/dashboard/operator-base-ooredoo']);
+      });
+    }else if (opts.dataPointIndex === 3){
+      this.zone.run(() => {
+        this.router.navigate(['/dashboard/operator-base-mytel']);
+      });
+      console.log('Mytel');
+
+    }else if (opts.dataPointIndex === 4){
+      this.zone.run(() => {
+        this.router.navigate(['/dashboard/operator-base-mec']);
+      });
+    }
+    
+  }
 
   public operatorAmtBase:operatorBaseAmount = {
      
     series: [{
       data: [720, 600,700,500,300]
     }],
-      chart: {
-      type: 'bar',
-      height: 240,
-      zoom: {
-        enabled: false
-      },
-      toolbar: {
-        show: false
-      },
+    chart: {
+    type: 'bar',
+    height: 240,
+    zoom: {
+      enabled: false
     },
+    toolbar: {
+      show: false
+    },
+    events: {
+      dataPointSelection: (e, chart, opts) => { this.handleClick(e, chart, opts); }
+      // click(event, chartContext, config) {
+      //   let ID = config.config.xaxis.categories[config.dataPointIndex];
+      //   handleClick("Category Name" + ID);
+      // },
+    }
+  },
     plotOptions: {
       bar: {
         columnWidth:'35%',
@@ -220,8 +258,7 @@ export class DashboardIndexComponent implements OnInit {
   };
 
 
-  constructor(public dialog: MatDialog) { }
-
+ 
   openDialog() {
     this.dialog.open(DashboardFilterComponent, {
       width: '900px',
